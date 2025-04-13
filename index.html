@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <div class="grid-container">
+
+    <!-- Header -->
+     <header>
+        <h1>Bienvenue dans mon portfolio</h1>
+        <nav>
+            <ul class="nav-menu">           
+                <li> <a href="#profil">Profil</a></li>
+                <li> <a href="#projets">Projets</a></li>
+                <li> <a href="#maquettes">Maquettes</a></li>
+                <li> <a href="#contact">Contact</a></li>
+                <li><a href="#" id="darkToggle">🌓 Mode sombre</a></li>
+            </ul>
+        </nav>
+     </header>
+
+     <!-- Aside -->
+      <aside> 
+    <img src="20241113_153021.jpg" alt="Photo de profil">
+    <h2>Profil</h2>
+    <p>Bonjour ! Je suis développeuse web passionnée par le design et le code.</p>
+    </aside>
+
+    <!-- Main -->
+     <main>
+        <section id="Projets">
+            <h2>Projets</h2>
+            <p>Voici quelques uns de mes projets récents en HTML, CSS et Javascript.</p>
+        </section>
+
+        <section id="Maquettes">
+            <h2>Maquettes</h2>
+            <p>Je conçois des maquettes UI/UX poiur des applications web et mobiles.</p>
+        </section>
+
+       <section id="Contact">
+        <h2>Contact</h2>
+        <p>Peux-tu me contacter via email ou sur mes réseaux sociaux</p>
+        <form id="contactForm">
+            <label>Nom :</label><br>
+            <input type="text" name="nom" required><br><br>
+            <label>Email :</label><br>
+            <input type="email" name="email" required><br><br>
+            <label>Message :</label><br>
+            <textarea name="message" rows="4" required></textarea><br><br>
+            <button type="submit">Envoyer</button>
+          </form>
+          <div class="form-social">
+            <p>Tu peux aussi me contacter ici :</p>
+            <a href="https://www.linkedin.com/in/tonpseudo" target="_blank">🔗 LinkedIn</a>
+          </div>
+       </section> 
+     </main>
+
+     <!-- Footer -->
+     <footer>
+        <p>&copy; 2025-Charlène-Tout droit réservé®</p>
+        <div class="social-links">
+            <a href="https://twitter.com/tonpseudo" target="_blank">🐦 Twitter</a>
+            <a href="https://github.com/tonpseudo" target="_blank">💻 GitHub</a>
+            <a href="https://linkedin.com/in/tonpseudo" target="_blank">🔗 LinkedIn</a>
+          </div>
+    </footer>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
