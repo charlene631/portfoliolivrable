@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "nom": "Charlène Gausset",
+    "âge": 36,
+    "adresse": {
+      "rue": "631 Route de l'Adour",
+      "ville": "Saint-Martin-de-Seignanx"
+    },
+    "interets": ["Programmation", "Musique", "Concerts", "Lecture"],
+    "competences": ["HTML", "CSS", "JavaScript", "Bootstrap", "WordPress", "Responsive Design", "UX"]
+  }
+]
