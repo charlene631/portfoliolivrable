@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Charlène</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="grid-container">
+
+        <!-- Header -->
+        <header class="header">
+            <h1>Bienvenue dans mon portfolio</h1>
+            <nav id="menu">
+                <ul class="nav-menu">
+                    <li> <a href="#profil" id="profil">Profil</a></li>
+                    <li> <a href="#parcours" id="parcours">Parcours</a></li>
+                    <li> <a href="#projets" id="projets">Projets</a></li>
+                    <li> <a href="#contact" id="contact">Contact</a></li>
+                    <li><a href="#" id="darkToggle">🌓</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- Aside -->
+    <aside id="aside">
+        <img src="20241113_153021.jpg" alt="Photo de profil">
+        <h2>Profil</h2>
+        <p>Bonjour ! Charlène, 36 ans, je suis en reconversion pour travailler dans le milieu du développement web. Suite à une formation de marketing digital, j'ai des connaissances en UX design, création de site WordPress et référencement naturel. Je suis développeuse web passionnée par le design et fan de sciences fictions.</p>
+
+        <button id="showProfile" class="btn btn-primary">Voir mon profil</button>
+
+        <!-- La section profil -->
+        <div id="profilSection" style="display: none; margin-top: 20px;">
+            <!-- Le JS va injecter la fiche ici -->
+        </div>        
+    </aside>
+
+    <!-- Main -->
+    <main>
+        <section id="parcours">
+            <h2>Parcours</h2>
+            <p>Voici une présentation de mes expèriences.</p>
+        </section>
+
+        <section id="projets">
+            <h2>Projets</h2>
+            <p>Voici quelques uns de mes projets récents en HTML, CSS et Javascript.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Vous pouvez me contacter via email ou sur mes réseaux sociaux.</p>
+
+            <form class="contactForm" id="contactForm">
+                <label for="nom">Nom :</label><br>
+                <input type="text" id="nom" name="nom" placeholder="Nom"><br><br>
+                <label for="email">Email :</label><br>
+                <input type="email" id="email" name="email" placeholder="Email"><br><br>
+                <label for="message">Message :</label><br>
+                <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea><br><br>
+                <button type="submit">Envoyer</button>
+            </form>
+
+            <div class="contact-card">
+                <p>Vous pouvez aussi me contacter ici :</p>
+                <a href="" target="_blank">🔗 WhatsApp</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <img src="vagues.jpg" alt="vagues" class="waves">
+    <footer class="footer">
+        <p>&copy; 2025 - Charlène - Tout droit réservé®</p>
+        <div class="social-links">
+            <a href="https://github.com/tonpseudo" target="_blank">💻 GitHub</a>
+            <a href="https://linkedin.com/in/tonpseudo" target="_blank">🔗 LinkedIn</a>
+        </div>
+    </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+
+</html>
