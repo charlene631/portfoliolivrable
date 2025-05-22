@@ -1,13 +1,33 @@
-[
-  {
+{  
     "id": 1,
     "nom": "Charlène Gausset",
     "âge": 36,
     "adresse": {
-      "rue": "631 Route de l'Adour",
+      "rue": "***",
       "ville": "Saint-Martin-de-Seignanx"
     },
-    "interets": ["Programmation", "Musique", "Concerts", "Lecture"],
-    "competences": ["HTML", "CSS", "JavaScript", "Bootstrap", "WordPress", "Responsive Design", "UX"]
+    "interets": ["Calligraphie", "Musique", "Concerts", "Lecture", "Marche"],
+    "competences": ["HTML", "CSS", "JavaScript", "Bootstrap", "WordPress", "Responsive Design", "UX"],
+    "parcours": [
+      {
+        "poste":"Chargée de communication numérique et marketing",
+        "entreprise":"Hi-commerce, Bordeaux",
+        "periode":"novembre 2022 - mai 2023",
+        "details":"Mise en oeuvre de campagnes numériques avec suivi analytique des performances. Création de contenu pour linkedIn et gestion de la stratégie de communication. Optimisation SEO pour site web"
+      },
+      {
+        "poste":"Chargée de communication digitale",
+        "entreprise":"Amoono, Paris",
+        "periode":"avril 2021 - novembre 2022",
+        "details":"Collaboration avec les développeurs pour intégrer et optimiser les contenus des sites ou applications web. Réalisation de maquettes UI design pour améliorer l'expèrience utilisateur. Maintenance et mises à jour des sites via WordPress. Support technique."
+      },
+      {
+        "poste":"Projets universitaires",
+        "entreprise":"Icadémie, Toulon",
+        "periode":"2021-2024",
+        "details":"Conception d'un site e-commerce avec WordPress, incluant personnalisation via HTML et CSS. Réalsiation de wireframes et de prototypes fonctionnels en UI/UX design. Veille technologique et tests utilisateurs pour garantir l'efficacité de la conception"
+      }
+    ]
+
   }
-]
+
