@@ -1,112 +1,186 @@
-document.getElementById("darkToggle").addEventListener("click", function (e) {
-  e.preventDefault();
-  document.body.classList.toggle("dark");
-});
+// Gestion du thème dark mode avec localstorage et écouteur d'évènement au bouton
+function saveTheme(theme) { //Cette fonction prend un thème en argument, applique ce thème au corps du document, et stocke le thème dans localStorage
+  document.body.className = theme;
+  localStorage.setItem('theme', theme);
+}
+
+function toggleTheme() { // Cette fonction récupère le thème actuel du corps du document, bascule vers le thème opposé, et utilise saveTheme pour appliquer et stocker le nouveau thème
+  const current = document.body.className;
+  const next = current === "dark" ? "light" : "dark";
+  saveTheme(next);
+}
+
+window.onload = () => {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  saveTheme(savedTheme);
+
+  // Ajouter un écouteur d'événement au bouton
+  document.getElementById('darkToggle').addEventListener('click', toggleTheme);
+}; // Un écouteur d'événement est ajouté au bouton pour appeler toggleTheme lorsque le bouton est cliqué
+
+// Importation du module burger.js
+import { createBurgerMenu } from './burger.js';
+createBurgerMenu();
 
 // Gestion du formulaire
-document.getElementById("contactForm").addEventListener("submit", function (e) {
+document.getElementById("contactForm")?.addEventListener("submit", function (e) {
   e.preventDefault();
   alert("Merci pour votre message !");
   this.reset();
 });
 
-// Liens du menu
-const profil = document.getElementById('profil');
-const projets = document.getElementById('parcours');
-const maquettes = document.getElementById('projets');
-const contact = document.getElementById('contact');
-
-profil.addEventListener('click', (e) => {
+// Liens du menu navigation pour accéder facilement à une section avec écouteur d'évènement sur les liens et les boutons avec un scroll
+document.getElementById('profilLink')?.addEventListener('click', (e) => {
   e.preventDefault();
-  document.getElementById('aside').scrollIntoView({ behavior: 'smooth' });
-});
-projets.addEventListener('click', (e) => {
-  e.preventDefault();
-  document.getElementById('projets').scrollIntoView({ behavior: 'smooth' });
-});
-maquettes.addEventListener('click', (e) => {
-  e.preventDefault();
-  document.getElementById('maquettes').scrollIntoView({ behavior: 'smooth' });
-});
-contact.addEventListener('click', (e) => {
-  e.preventDefault();
-  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  document.getElementById('profilSection')?.scrollIntoView({ behavior: 'smooth' }); // Récupération de l'id, écouteur d'évènement et défilement progressif
 });
 
-// Toggle profil
-const button = document.getElementById('showProfile');
-const section = document.getElementById('profilSection');
-let isVisible = false;
+document.getElementById('parcoursLink')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('parcours')?.scrollIntoView({ behavior: 'smooth' }); // Récupération de l'id, écouteur d'évènement et défilement progressif
+});
 
-button.addEventListener('click', () => {
-  isVisible = !isVisible;
-  section.style.display = isVisible ? 'block' : 'none';
-  button.textContent = isVisible ? 'Masquer mon profil' : 'Voir mon profil';
+document.getElementById('projetsLink')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('projets')?.scrollIntoView({ behavior: 'smooth' }); // Récupération de l'id, écouteur d'évènement et défilement progressif
+});
+
+document.getElementById('contactLink')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); // Récupération de l'id, écouteur d'évènement et défilement progressif
+});
+
+// Toggle profil, bouton de basculement 
+const buttonProfile = document.getElementById('showProfile');
+const sectionProfile = document.getElementById('profilSection');
+let isProfileVisible = false;
+
+const expButton = document.getElementById('showExperiences');
+const expSection = document.getElementById('experiencesSection');
+let expVisible = false;
+
+buttonProfile?.addEventListener('click', () => {
+  isProfileVisible = !isProfileVisible;
+  sectionProfile.style.display = isProfileVisible ? 'block' : 'none';
+  buttonProfile.textContent = isProfileVisible ? 'Masquer mon profil' : 'Voir mon profil';
 });
 
 // Chargement des données JSON
 fetch('data.json')
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
   .then(data => {
-    const e = data[0];
-
+    const e = data;
     const pv = Math.floor(Math.random() * 100) + 50;
-    const niveau = Math.floor(Math.random() * 50) + 10;
 
-    // On injecte le HTML propre
-    section.innerHTML = `
-      <div class="card-container">
-        <div class="card-flip" id="flipCard">
+    const sectionProfile = document.getElementById('profilSection');
 
-          <!-- Face avant -->
-          <div class="card-face front custom-card mx-auto">
-            <span class="rare-badge">Légendaire 👑</span>
-            <img src="/assets/poissirene.png" class="card-img-top character-img" alt="Poissirène">
-            <div class="card-body text-center">
-              <h3 class="card-title">${e.nom}</h3>
+    if (sectionProfile) { // Une condition pour  exécuter un bloc d'instructions vraies pour la carte profil style Pokémon
+      sectionProfile.innerHTML = `
+        <div class="card-container">
+          <div class="card-flip" id="flipCard">
+            <!-- Face avant -->
+            <div class="card-face front custom-card">
+              <span class="rare-badge">Légendaire 👑</span>
+              <img src="/assets/image/20241113_153021.jpg" class="character-img" alt="Photo de profil">
+              <h3>${e.nom}</h3>
               <p><strong>PV :</strong> ${pv}</p>
-              <span class="badge bg-primary mb-2">Type : Front-End</span>
-              <h3>Compétences</h3>
-              ${e.competences.map(skill => `
-                <div class="mb-2">
+              <span class="badge bg-primary">Type : Front-End</span>
+              <br>
+              <h4>Compétences</h4>
+              <br>
+              <div class="d-flex flex-wrap justify-content-center gap-2">
+                ${e.competences.map(skill => `
                   <span class="badge bg-success">${skill}</span>
-                  <div class="progress">
-                    <div class="progress-bar bg-info" style="width: ${Math.floor(Math.random() * 50 + 50)}%"></div>
-                  </div>
-                </div>
-              `).join('')}
+                `).join('')}              
+              </div>
+              <br>
+              <h4>Soft skills</h4>
+              <p class="italic-text">"Curieuse et passionnée, j’aime relever les défis. Mon parcours m’a permis de développer une vraie capacité d’adaptation et une grande persévérance."</p>
             </div>
-          </div>
 
-          <!-- Dos -->
-          <div class="card-face back custom-card mx-auto">
-            <h3>Infos Pokédex</h3>
-            <p><strong>Âge :</strong> ${e.âge} ans</p>
-            <p><strong>Adresse :</strong> ${e.adresse.ville}, ${e.adresse.rue}</p>
-            <p><strong>Intérêts :</strong></p>
-            <div class="d-flex flex-wrap gap-2 justify-content-center">
-              ${e.interets.map(interet => `
-                <span class="badge bg-warning text-dark">${interet}</span>
-              `).join('')}
-            </div>
-            <br>
-            <h3>Évolution 🌊</h3>
-            <img src="/assets/hypocean.png" class="evolution-img" alt="Hypocéan">
-            <p>Prochaine évolution : Hypocéan</p>
-            <p style="font-style: italic;">"Toujours en quête de nouveaux défis..."</p>
+            <!-- Face arrière -->
+            <div class="card-face back custom-card">
+              <h3>Infos Pokédex</h3>
+              <p><strong>Âge :</strong> ${e.âge} ans</p>
+              <p><strong>Adresse :</strong> ${e.adresse.ville}, ${e.adresse.rue}</p>
+              <h4>Intérêts</h4>
+              <div class="d-flex flex-wrap justify-content-center gap-2">
+                ${e.interets.map(interet => `
+                  <span class="badge bg-warning text-dark">${interet}</span>
+                `).join('')}
+              </div>
+              <h4 class="mt-3">Évolution</h4>
+              <img src="/assets/image/lunala.png" class="evolution-img" alt="Lunala">
+              <p>Prochaine évolution : Lunala</p>
+              <p class="italic-text">"Curieuse et passionnée, j’aime relever les défis. Mon parcours m’a permis de développer une vraie capacité d’adaptation et une grande persévérance."</p>
+              <button class="return-btn">Retour</button>
+              </div>
           </div>
         </div>
-      </div>
-    `;
+      `;
 
-    // Gestion du flip
-    const flipCard = document.getElementById('flipCard');
-    flipCard.addEventListener('click', () => {
-      flipCard.classList.toggle('flipped');
+      // Gestion du flip de la carte
+      const flipCard = document.getElementById('flipCard');
+      if (flipCard) {
+        flipCard.addEventListener('click', (e) => {
+          if (!e.target.classList.contains('return-btn')) {
+            flipCard.classList.toggle('flipped');
+          }
+        });
+      }
+
+      // Bouton retour sur la carte (UX => pour faciliter la navigation visuelle de l'utilisateur)
+      sectionProfile.addEventListener('click', (e) => {
+        if (e.target.classList.contains('return-btn')) {
+          flipCard.classList.remove('flipped');
+        }
+      });
+    }
+
+    // Section parcours
+    expButton?.addEventListener('click', () => {
+      expVisible = !expVisible;
+      expSection.style.display = expVisible ? 'block' : 'none';
+      expButton.textContent = expVisible ? 'Masquer mes expériences' : 'Mes expériences';
+
+      if (expVisible) { // Condition pour éxecuter un bloc d'instructions pour le tableau d'éxpériences professionnelles
+        expSection.innerHTML = `
+          <h3>Parcours professionnel</h3>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Poste</th>
+                <th>Entreprise</th>
+                <th>Période</th>
+                <th>Détails</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${e.parcours.map(exp => `
+                <tr>
+                  <td>${exp.poste}</td>
+                  <td>${exp.entreprise || 'Non renseigné'}</td>
+                  <td>${exp.periode || 'Non renseigné'}</td>
+                  <td>${exp.details || 'Non renseigné'}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        `;
+      }
     });
   })
-  .catch((error) => {
+  .catch(error => {
     console.error("Erreur de chargement du fichier JSON:", error);
+    sectionProfile.innerHTML = "<p>Impossible de charger le profil pour le moment.</p>";
   });
 
-  
+
+
+
+
