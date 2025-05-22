@@ -1,6 +1,6 @@
 # PORTFOLIO LIVRABLE
 Portfolio
-Projet de développement web HTML, CSS et JavaScript + Bootstrap pour créer un portfolio pour rechercher un stage 
+Projet de développement web HTML, CSS et liens Bootstrap, JavaScript et modules, pour créer un portfolio pour rechercher un stage 
 
 Structure du projet :
 
