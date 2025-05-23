@@ -34,3 +34,10 @@ Portfolio livrable/
 - Utilisez le formulaire de contact pour m'envoyer un message pour en savoir plus.
 - Jouer avec la carte profil pour avoir un aperçu de mes compétences, mes soft skills et mes intérêts.
 - Branche Fichiers-stables pour la sauvegarde de fichiers avant modifications.
+
+## Environnement de travail
+- Création nouveau repository sur GitHub avec main et branche
+- Création de la structure et développement du code avec Vs Code
+- Push des fichiers de code vers GitHub
+- Commits des modifications
+- Utilisation de GitHub pages pour la création du lien de navigation en ligne 
