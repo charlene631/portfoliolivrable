@@ -31,4 +31,5 @@ Portfolio livrable/
 
 ## Utilisation
 - Naviguez à travers les différentes sections pour en savoir plus sur mes compétences et mes projets.
-- Utilisez le formulaire de contact pour me envoyer un message.
+- Utilisez le formulaire de contact pour m'envoyer un message pour en savoir plus.
+- Jouer avec la carte profil pour avoir un aperçu de mes compétences, mes soft skills et mes intérêts. 
