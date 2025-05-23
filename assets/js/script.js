@@ -79,7 +79,7 @@ fetch('data.json')
             <!-- Face avant -->
             <div class="card-face front custom-card">
               <span class="rare-badge">Légendaire 👑</span>
-              <img src="/assets/image/20241113_153021.jpg" class="character-img" alt="Photo de profil">
+              <img src="assets/image/20241113_153021.jpg" class="character-img" alt="Photo de profil">
               <h3>${e.nom}</h3>
               <p><strong>PV :</strong> ${pv}</p>
               <span class="badge bg-primary">Type : Front-End</span>
@@ -108,9 +108,9 @@ fetch('data.json')
                 `).join('')}
               </div>
               <h4 class="mt-3">Évolution</h4>
-              <img src="/assets/image/lunala.png" class="evolution-img" alt="Lunala">
+              <img src="assets/image/lunala.png" class="evolution-img" alt="Lunala">
               <p>Prochaine évolution : Lunala</p>
-              <p class="italic-text">"Curieuse et passionnée, j’aime relever les défis. Mon parcours m’a permis de développer une vraie capacité d’adaptation et une grande persévérance."</p>
+              <p class="italic-text">"Maîtriser la logique et la technique de langage de programmation. Trouver un emploi stable de Développeur. Faire évoluer le Portfolio en projet React."</p>
               <button class="return-btn">Retour</button>
               </div>
           </div>
