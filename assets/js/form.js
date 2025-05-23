@@ -9,7 +9,7 @@ function handleFormSubmit(event) {
     //const fileInput = document.getElementById('file'); // désactivé temporairement
     //if (fileInput.files.length > 0) {
         //formData.append('file', fileInput.files[0]);
-    }
+   // }//
 
     // Valider les entrées
     if (!formData.get('email') || !formData.get('message')) {
@@ -48,6 +48,6 @@ function handleFormSubmit(event) {
         errorMessage.style.color = 'red';
         document.getElementById('contactForm').appendChild(errorMessage);
     });
-//}
+}
 
 document.getElementById('contactForm').addEventListener('submit', handleFormSubmit);
