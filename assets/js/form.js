@@ -6,10 +6,10 @@ function handleFormSubmit(event) {
     formData.append('email', document.getElementById('email').value);
     formData.append('message', document.getElementById('message').value);
 
-    //const fileInput = document.getElementById('file'); // désactivé temporairement
-    //if (fileInput.files.length > 0) {
-        //formData.append('file', fileInput.files[0]);
-   // }//
+    const fileInput = document.getElementById('file'); 
+    if (fileInput && fileInput.files.length > 0) { // désactivé temporairement
+        formData.append('file', fileInput.files[0]);
+    }
 
     // Valider les entrées
     if (!formData.get('email') || !formData.get('message')) {
