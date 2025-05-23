@@ -22,13 +22,6 @@ window.onload = () => {
 import { createBurgerMenu } from './burger.js';
 createBurgerMenu();
 
-// Gestion du formulaire
-document.getElementById("contactForm")?.addEventListener("submit", function (e) {
-  e.preventDefault();
-  alert("Merci pour votre message !");
-  this.reset();
-});
-
 // Liens du menu navigation pour accéder facilement à une section avec écouteur d'évènement sur les liens et les boutons avec un scroll
 document.getElementById('profilLink')?.addEventListener('click', (e) => {
   e.preventDefault();
@@ -179,6 +172,8 @@ fetch('data.json')
     console.error("Erreur de chargement du fichier JSON:", error);
     sectionProfile.innerHTML = "<p>Impossible de charger le profil pour le moment.</p>";
   });
+
+
 
 
 
