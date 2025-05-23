@@ -39,8 +39,20 @@ button:hover {
   background-color: #3e4a1b;
 }
 
+form {           
+  display: flex;            
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 label {
-  display: none;
+  margin-bottom: 10px;
+}
+
+input, button {
+  margin-bottom: 15px;
+  padding: 8px;
 }
 
 /*======= LAYOUT STRUCTURE =======*/
