@@ -215,8 +215,30 @@ footer .social-links a:hover {
 }
 
 .card-face {
-  height: auto;
-  max-height: none;
+  position: absolute;
+  width: 100%;
+  max-height: 90vh; /* Limite la hauteur maximale */
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow-y: auto; /* Permet le défilement si le contenu est trop long */
+  background-color: #ffffff;
+  color: #000;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-face p {
+  font-size: 0.9rem; /* Réduit légèrement la taille de la police */
+  margin-bottom: 0.5rem; /* Réduit la marge inférieure */
+}
+
+.card-face h4 {
+  margin-top: 1rem; /* Réduit la marge supérieure */
+  margin-bottom: 0.5rem; /* Réduit la marge inférieure */
 }
 
 .card-flip {
@@ -253,35 +275,6 @@ footer .social-links a:hover {
 /* Face arrière (au dos) */
 .card-flip .back {
   transform: rotateY(180deg);
-}
-
-.card-face {
-  position: absolute;
-  width: 100%;
-  overflow-y: auto;
-  max-height: 90vh; /* Limite la hauteur maximale */
-  min-height: 100%;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  overflow-y: auto; /* Permet le défilement si le contenu est trop long */
-  background-color: #ffffff;
-  color: #000;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  padding: 1.5rem;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.card-face p {
-  font-size: 0.9rem; /* Réduit légèrement la taille de la police */
-  margin-bottom: 0.5rem; /* Réduit la marge inférieure */
-}
-
-.card-face h4 {
-  margin-top: 1rem; /* Réduit la marge supérieure */
-  margin-bottom: 0.5rem; /* Réduit la marge inférieure */
 }
 
 .badge {
@@ -324,6 +317,13 @@ footer .social-links a:hover {
 h3 {
   margin-top: 15px;
   color: #1976d2;
+}
+
+.character-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 50%;
 }
 
 .custom-card::before {
@@ -427,6 +427,30 @@ form button {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
+    height: 90vh;
+  }
+
+  .card-flip .front,
+  .card-flip .back {
+    min-height: 100%; 
+    overflow-y: auto;
+  }
+
+  .card-face {
+    padding: 1rem;
+    font-size: 0.9rem;
+    overflow-y: auto;
+  }
+
+  .card-face p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .card-face h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
   }
 }
 
