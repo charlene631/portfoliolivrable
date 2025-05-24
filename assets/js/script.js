@@ -144,7 +144,7 @@ expButton?.addEventListener('click', () => {
       .then(e => {
         expSection.innerHTML = `
           <h3>Parcours professionnel</h3>
-          <table class="table table-striped">
+          <table class="table table-striped table-hover">
             <thead>
               <tr>
                 <th>Poste</th>
