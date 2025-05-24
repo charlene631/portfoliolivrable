@@ -368,6 +368,10 @@ h3 {
   }
 }
 
+body.dark .card-container.ranged {
+  animation: shrinkToButton 0.5s forwards;
+}
+
 .card-container.ranged {
   animation: shrinkToButton 0.5s forwards;
 }
@@ -451,6 +455,11 @@ form button {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 18px;
+  }
+
+  .table {
+    display: block;
+    overflow-x: auto;
   }
 }
 
@@ -546,7 +555,6 @@ body.dark .card-face {
   color: #f0f1f0;
 }
 
-/* Ajoutez ou modifiez ces styles pour le mode sombre */
 body.dark .custom-card {
   border: 4px solid #555; /* Bordure plus sombre */
   box-shadow: 0 0 20px rgba(100, 100, 100, 0.6); /* Ombre plus sombre */
@@ -570,4 +578,6 @@ body.dark .rare-badge {
 body.dark h3 {
   color: #bb86fc; /* Couleur pour les titres en mode sombre */
 }
+
+
 
