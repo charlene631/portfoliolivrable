@@ -43,6 +43,19 @@ button:hover {
   background-color: #3e4a1b;
 }
 
+.buttonExp {
+  cursor: pointer;
+  border: none;
+  background-color: #3e4a1b;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+.buttonExp:hover {
+  background-color: #1f2f49;
+}
+
 form {           
   display: flex;            
   flex-direction: column;
@@ -509,9 +522,6 @@ form button {
     column-gap: 3rem;
   }
 
-  .card-flip {
-    max-width: 400px;
-  }
 }
 
 /* ======= DARK MODE ======= */

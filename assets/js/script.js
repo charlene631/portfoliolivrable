@@ -40,6 +40,9 @@ document.getElementById('contactLink')?.addEventListener('click', (e) => {
 });
 
 // Toggle profil
+const openSound = new Audio('assets/sound/Shrinking Pokeball.mp3');
+const closeSound = new Audio('assets/sound/Growing Pokeball.mp3');
+
 const buttonProfile = document.getElementById('showProfile');
 const sectionProfile = document.getElementById('profilSection');
 let isProfileVisible = false;
@@ -49,6 +52,8 @@ buttonProfile?.addEventListener('click', () => {
     sectionProfile.style.display = 'block';
     buttonProfile.textContent = 'Masquer mon profil';
     isProfileVisible = true;
+
+    openSound.play(); // 🔊 Son à l'ouverture
 
     fetch('data.json')
       .then(response => {
@@ -106,6 +111,8 @@ buttonProfile?.addEventListener('click', () => {
           if (e.target.classList.contains('return-btn')) {
             const cardContainer = document.querySelector('.card-container');
             cardContainer.classList.add('ranged');
+
+            closeSound.play(); // 🔇 Son à la fermeture
 
             setTimeout(() => {
               sectionProfile.innerHTML = '';
