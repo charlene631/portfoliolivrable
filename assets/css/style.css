@@ -2,9 +2,6 @@
 *, *::before, *::after { /*règle d’accessibilité pour que les utilisateurs naviguant au clavier (tabulation) puissent voir sur quel lien ou bouton ils se trouvent */
   box-sizing: border-box;
 }
-* {
-  outline: 1px solid red;
-}
 
 body {
   font-family: Arial, sans-serif;
