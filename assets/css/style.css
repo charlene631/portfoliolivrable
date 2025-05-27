@@ -118,6 +118,7 @@ header {
   justify-content: center; /* Centrage horizontal */
   gap: 10px; /* Espacement entre les éléments */
   margin-top: 2rem; /* Marge supérieure */
+  margin-right: 40px;
 }
 
 /* Style pour les éléments du menu */
