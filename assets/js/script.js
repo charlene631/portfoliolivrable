@@ -105,7 +105,7 @@ buttonProfile?.addEventListener("click", () => {
                 <p class="italic-text">"Curieuse et passionnée, j’aime relever les défis. Mon parcours m’a permis de développer une vraie capacité d’adaptation et une grande persévérance."</p>                
                 <img src="assets/image/mewblue.webp" class="evolution-img" alt="Mew">
                 <p>Prochaine évolution : Mew</p>
-                <button class="return-btn closeCardBtn" type="button">Retour</button>
+                <button class="return-btn closeCardBtn" type="button" aria-label="Fermer la carte de profil">Retour</button>
               </div>
             </div>
           </div>

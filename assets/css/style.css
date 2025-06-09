@@ -267,6 +267,14 @@ footer {
   color: white;
 }
 
+.footerSection {
+  background-color: #ffd5ee;
+  padding: 2rem 0 6rem;;
+  margin: 0px;
+  border-radius: 0;
+  justify-items: center;
+}
+
 footer .social-links a {
   margin: 0 10px;
   color: #ccc;
