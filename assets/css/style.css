@@ -1,546 +1,598 @@
-/* ======= BASE / MOBILE-FIRST ======= */
-
-/* Applique une boîte de modèle de boîte pour tous les éléments, y compris les pseudo-éléments */
+/* ===============================
+   BASE / MOBILE-FIRST
+================================= */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Définit les styles de base pour le corps du document */
 body {
-  font-family: Arial, sans-serif; /* Police de caractères */
-  background-color: #f9f9f9; /* Couleur de fond */
-  line-height: 1.6; /* Hauteur de ligne */
-  overflow-x: hidden; /* Désactive le défilement horizontal */
-  margin: 0; /* Supprime les marges par défaut */
-  padding: 0; /* Supprime les espacements internes par défaut */
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-/* Style pour les liens et boutons au focus */
 a:focus, button:focus {
-  outline: 2px solid #1976d2; /* Contour bleu pour l'accessibilité */
+  outline: 2px solid #2962e6;
 }
 
-/* Style pour les images */
 img {
-  max-width: 100%; /* Largeur maximale */
-  height: auto; /* Hauteur automatique */
-  display: block; /* Affiche comme un bloc */
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Style pour les liens */
 a {
-  color: inherit; /* Hérite de la couleur du parent */
+  color: inherit;
 }
 
-/* Supprime les puces des listes */
 ul {
   list-style: none;
 }
 
-/* Style de base pour les boutons */
 button {
-  cursor: pointer; /* Curseur en forme de main */
-  border: none; /* Pas de bordure */
-  background-color: #1f2f49; /* Couleur de fond */
-  color: white; /* Couleur du texte */
-  padding: 10px 15px; /* Espacement interne */
-  border-radius: 20px; /* Coins arrondis */
+  cursor: pointer;
+  border: none;
+  background-color: #18396a;
+  color: white;
 }
 
-/* Style au survol des boutons */
 button:hover {
-  background-color: #3e4a1b; /* Changement de couleur de fond */
+  background-color: #ffd5ee;
+  color: black;
 }
 
-/* Style pour les boutons de type "Exp" */
 .buttonExp {
   cursor: pointer;
   border: none;
-  background-color: #3e4a1b;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 20px;
+  background-color: #ffd5ee;
+  color: black;
 }
 
-/* Style au survol des boutons "Exp" */
 .buttonExp:hover {
-  background-color: #1f2f49;
+  background-color: #ee83b4;
 }
 
-/* Style pour les formulaires */
+.buttonProfile {
+  width: 100px;
+  height: 100px;
+  color: #18396a;
+  font-style: bold;
+  background-color: #18396a;
+  background-image: url('/assets/image/diamantcristal.png');
+  background-size: cover;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonProfile span {
+  transform: rotate(-45deg);
+  display: inline-block;
+}
+
+.buttonProfile.active {
+  transform: rotate(225deg);
+}
+
+.buttonProfile.active span {
+  transform: rotate(-225deg);
+}
+
+.themeToggle {
+  position: absolute;
+  top: -130px;
+  right: 2px;
+  z-index: 10;
+  background: none;
+}
+
+.themeToggle:hover {
+  background: none;
+}
+
+/* Formulaires */
 form {
-  display: flex; /* Affiche en flex */
-  flex-direction: column; /* Direction colonne */
-  max-width: 400px; /* Largeur maximale */
-  margin: 0 auto; /* Centrage horizontal */
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-/* Style pour les étiquettes */
 label {
-  margin-bottom: 10px; /* Marge inférieure */
+  margin-bottom: 10px;
 }
 
-/* Style pour les champs de saisie et boutons */
 input, button {
-  margin-bottom: 15px; /* Marge inférieure */
-  padding: 8px; /* Espacement interne */
+  margin-bottom: 15px;
+  padding: 8px;
 }
 
-/* ======= LAYOUT STRUCTURE ======= */
-
-/* Conteneur de grille */
+/* ===============================
+   LAYOUT STRUCTURE
+================================= */
 .grid-container {
-  display: grid; /* Affiche en grille */
-  grid-template-areas: /* Définit les zones de la grille */
+  display: grid;
+  grid-template-areas:
     "header"
     "aside"
     "main"
     "footer";
-  gap: 15px; /* Espacement entre les éléments */
-  padding: 15px; /* Espacement interne */
 }
 
-/* Style pour l'en-tête */
 header {
-  grid-area: header; /* Zone de la grille */
-  background-color: #333; /* Couleur de fond */
-  color: white; /* Couleur du texte */
-  text-align: center; /* Alignement du texte */
-  padding: 2rem 0 3rem; /* Espacement interne */
-  border-radius: 10px; /* Coins arrondis */
+  grid-area: header;
+  background-color: #5a2952;
+  background-image: url('https://img.freepik.com/vecteurs-premium/paysage-nuit-du-ciel-nuages_24911-3808.jpg?semt=ais_hybrid&w=740');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  color: white;
+  text-align: center;
+  padding: 2rem 0 3rem;
+  border-radius: 0;
+  position: relative;
 }
 
-/* Style pour le menu de navigation */
+header nav {
+  position: relative;
+  z-index: 2;
+}
+
+header .imgHeader {
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  transform: translateY(-50%);
+  animation: mewMove 10s linear infinite;
+}
+
+@keyframes mewMove {
+  0% {
+    left: -100px;
+    top: 40%;
+  }
+  25% {
+    top: 30%;
+  }
+  50% {
+    left: 100%;
+    top: 60%;
+  }
+  75% {
+    top: 40%;
+  }
+  100% {
+    left: -100px;
+    top: 50%;
+  }
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  margin-top: 30px;
+  padding-top: 30px;
+  color: #ffd5ee;
+}
+
+/* Menu de navigation */
 .nav-menu {
-  list-style: none; /* Pas de puces */
-  display: flex; /* Affiche en flex */
-  flex-wrap: wrap; /* Retour à la ligne si nécessaire */
-  justify-content: center; /* Centrage horizontal */
-  gap: 10px; /* Espacement entre les éléments */
-  margin-top: 2rem; /* Marge supérieure */
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2rem;
   margin-right: 40px;
 }
 
-/* Style pour les éléments du menu */
 .nav-menu li {
-  margin: 0; /* Pas de marge */
+  margin: 0;
 }
 
-/* Style pour les liens du menu */
 .nav-menu a {
-  display: inline-block; /* Affiche en ligne-bloc */
-  background-color: #555; /* Couleur de fond */
-  color: white; /* Couleur du texte */
-  padding: 10px 16px; /* Espacement interne */
-  border-radius: 25px; /* Coins arrondis */
-  text-decoration: none; /* Pas de soulignement */
-  font-weight: bold; /* Texte en gras */
-  transition: background-color 0.3s, transform 0.2s; /* Transition pour les effets */
+  display: inline-block;
+  background-color: #18396a;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Style au survol des liens du menu */
 .nav-menu a:hover {
-  background-color: #777; /* Changement de couleur de fond */
-  transform: scale(1.05); /* Effet de zoom */
+  background-color: #ee83b4;
+  transform: scale(1.05);
 }
 
-/* Style pour la barre latérale */
-aside#profilAside {
-  grid-area: aside; /* Zone de la grille */
-  background-color: #eee; /* Couleur de fond */
-  padding: 20px; /* Espacement interne */
-  border-radius: 0px; /* Pas de coins arrondis */
-  text-align: center; /* Alignement du texte */
+/* Aside profil */
+#profilAside {
+  grid-area: aside;
+  background-color: #ffd5ee;  
+  padding: 20px;  
+  justify-items: center;
+  display: grid;
+  gap: 1rem;  
+  position: relative;
 }
 
-/* Style pour la section principale */
+#profilSection {
+  border: 2px solid blue;
+  padding: 20px;  
+}
+
+/* Section principale */
 main {
-  grid-area: main; /* Zone de la grille */
-  background-color: white; /* Couleur de fond */
-  padding: 20px; /* Espacement interne */
-  border-radius: 0px; /* Pas de coins arrondis */
+  grid-area: main;
+  background-color: white;
+  padding: 20px;
 }
 
-/* Style pour les sections */
+/* Sections */
 section {
-  background-color: white; /* Couleur de fond */
-  border: 1px solid #ddd; /* Bordure */
-  justify-items: center; /* Centrage horizontal */
-  border-radius: 0px; /* Pas de coins arrondis */
-  padding: 20px; /* Espacement interne */
-  margin-bottom: 30px; /* Marge inférieure */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre */
-  transition: box-shadow 0.3s ease; /* Transition pour l'ombre */
-  overflow: hidden; /* Masque le contenu débordant */
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  text-align: center;
 }
 
-/* Effet au survol des sections */
 section:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/*Style pour le paragraphe de la section*/
-section#parcours p{
-  text-align: center;/*Définit l'alignement horizontal d'un élément*/
+section#parcours p {
+  text-align: center;
 }
 
-/* Style pour le pied de page */
+/* Pied de page */
 footer {
-  grid-area: footer; /* Zone de la grille */
-  text-align: center; /* Alignement du texte */
-  padding: 2rem 0 6rem; /* Espacement interne */
-  background-color: #333; /* Couleur de fond */
-  color: white; /* Couleur du texte */
-  border-radius: 0px; /* Pas de coins arrondis */
+  grid-area: footer;
+  text-align: center;
+  padding: 2rem 0 6rem;
+  background-color: #5a2952;
+  color: white;
 }
 
-/* Style pour les liens des réseaux sociaux */
 footer .social-links a {
-  margin: 0 10px; /* Marge horizontale */
-  color: #ccc; /* Couleur du texte */
-  text-decoration: none; /* Pas de soulignement */
-  font-size: 18px; /* Taille de la police */
-  font-weight: bold; /* Texte en gras */
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-/* Style au survol des liens des réseaux sociaux */
 footer .social-links a:hover {
-  color: white; /* Changement de couleur du texte */
-}
-
-/* Style pour les vagues */
-.waves {
-  width: 100%; /* Largeur maximale */
-  height: auto; /* Hauteur automatique */
-  margin-top: 20px; /* Marge supérieure */
-}
-
-/* ======= SWIPER SLIDER ======= */
-
-/* Conteneur pour le slider */
-#swiperProjectContainer {
-  max-width: 900px; /* Largeur maximale */
-  margin: 0 auto; /* Centrage horizontal */
-  position: relative; /* Position relative */
-  z-index: 1; /* Niveau de superposition */
-}
-
-/* Style pour le slider */
-.swiper {
-  width: 100%; /* Largeur maximale */
-  padding-bottom: 50px; /* Espacement inférieur */
-}
-
-/* Style pour les diapositives */
-.swiper-slide {
-  background: #fff; /* Couleur de fond */
-  border-radius: 10px; /* Coins arrondis */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre */
-  padding: 20px; /* Espacement interne */
-  text-align: center; /* Alignement du texte */
-}
-
-/* Style pour le contenu des diapositives */
-.slide-content img {
-  max-width: 100%; /* Largeur maximale */
-  height: auto; /* Hauteur automatique */
-  border-radius: 10px; /* Coins arrondis */
-}
-
-/* Style pour les titres des diapositives */
-.slide-content h3 {
-  margin-top: 15px; /* Marge supérieure */
-  font-size: 1.25rem; /* Taille de la police */
-}
-
-/* Style pour les paragraphes des diapositives */
-.slide-content p {
-  color: #555; /* Couleur du texte */
-  font-size: 1rem; /* Taille de la police */
+  color: white;
 }
 
 /* ======= CARD FLIP PROFILE ======= */
 
-/* Conteneur pour la carte */
+/* ----- Conteneur et structure ----- */
 .card-container {
-  perspective: 1000px; /* Perspective pour l'effet 3D */
-  max-width: 400px; /* Largeur maximale */
-  margin: auto; /* Centrage horizontal */
-  position: relative; /* Position relative */
-  z-index: 2; /* Niveau de superposition */
+  perspective: 1000px;
+  max-width: 400px;
+  margin: auto;
+  position: relative; 
+  height: 600px; 
+  z-index: 10;
 }
 
-/* Style pour les faces de la carte */
-.card-face {
-  position: absolute; /* Position absolue */
-  width: 100%; /* Largeur maximale */
-  max-height: 90vh; /* Hauteur maximale */
-  backface-visibility: hidden; /* Masque la face arrière */
-  border-radius: 10px; /* Coins arrondis */
-  overflow-y: auto; /* Défilement vertical si nécessaire */
-  background-color: #ffffff; /* Couleur de fond */
-  color: #000; /* Couleur du texte */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre */
-  padding: 1.5rem; /* Espacement interne */
-  box-sizing: border-box; /* Modèle de boîte */
-  display: flex; /* Affiche en flex */
-  flex-direction: column; /* Direction colonne */
-  justify-content: flex-start; /* Alignement vertical */
-}
-
-/* Style pour les paragraphes des faces de la carte */
-.card-face p {
-  font-size: 0.9rem; /* Taille de la police */
-  margin-bottom: 0.5rem; /* Marge inférieure */
-}
-
-/* Style pour les titres des faces de la carte */
-.card-face h4 {
-  margin-top: 1rem; /* Marge supérieure */
-  margin-bottom: 0.5rem; /* Marge inférieure */
-}
-
-/* Style pour le retournement de la carte */
 .card-flip {
-  width: 100%; /* Largeur maximale */
-  height: auto; /* Hauteur automatique */
-  transition: transform 0.8s; /* Transition pour l'effet de retournement */
-  transform-style: preserve-3d; /* Conserve l'effet 3D */
-  position: relative; /* Position relative */
-  cursor: pointer; /* Curseur en forme de main */
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
 }
 
-/* Style pour la carte retournée */
 .card-flip.flipped {
-  transform: rotateY(180deg); /* Rotation de 180 degrés */
+  transform: rotateY(180deg);
 }
 
-/* Style pour la face avant de la carte */
-.card-flip .front,
-.card-flip .back {
-  width: 100%; /* Largeur maximale */
-  min-height: 400px; /* Hauteur minimale */
-  backface-visibility: hidden; /* Masque la face arrière */
-  position: absolute; /* Position absolue */
-  top: 0; /* Position en haut */
-  left: 0; /* Position à gauche */
-  border-radius: 10px; /* Coins arrondis */
-  overflow: hidden; /* Masque le contenu débordant */
-  box-sizing: border-box; /* Modèle de boîte */
+/* ----- Faces de la carte ----- */
+.card-face {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  padding: 1rem;
 }
 
-/* Affiche la face avant par défaut */
-.card-flip .front {
-  z-index: 2; /* Niveau de superposition */
+.card-face.front {
+  z-index: 2;
+  background-image: url('/assets/image/versionpixlrcharlenepositive.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
 }
 
-/* Style pour la face arrière de la carte */
-.card-flip .back {
-  transform: rotateY(180deg); /* Rotation de 180 degrés */
+.card-face.back {
+  transform: rotateY(180deg);
+  background: #f8f9fa;
+  color: #333;
 }
 
-/* Style pour les badges */
-.badge {
-  font-size: 0.8rem; /* Taille de la police */
-  padding: 0.3rem 0.6rem; /* Espacement interne */
+.card-face h4 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Style pour les badges rares */
-.rare-badge {
-  background: linear-gradient(to right, gold, orange); /* Dégradé de couleurs */
-  color: #000; /* Couleur du texte */
-  font-weight: bold; /* Texte en gras */
-  padding: 0.4rem 0.8rem; /* Espacement interne */
-  border-radius: 1rem; /* Coins arrondis */
-  display: inline-block; /* Affiche en ligne-bloc */
-  margin-bottom: 1rem; /* Marge inférieure */
-  font-size: 0.9rem; /* Taille de la police */
-  position: absolute; /* Position absolue */
-  top: 10px; /* Position en haut */
-  right: 10px; /* Position à droite */
-  box-shadow: 0 0 10px gold; /* Ombre */
+.card-face p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Style au survol du bouton de retour */
+/* ----- Bouton de retour sur la face arrière ----- */
 .back button.return-btn:hover {
-  background-color: #314d7d; /* Changement de couleur de fond */
+  background-color: #314d7d;
 }
 
-/* Style pour les cartes personnalisées */
+/* ----- Badges ----- */
+.badge {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+}
+
+.rare-badge {
+  background: linear-gradient(to right, #ee83b4, #ee83b4);
+  color: #000;
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+  border-radius: 1rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px #ee83b4;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* ----- Cartes personnalisées ----- */
 .custom-card {
-  width: 100%; /* Largeur maximale */
-  max-width: 350px; /* Largeur maximale */
-  border: 4px solid #FFCB05; /* Bordure */
-  border-radius: 20px; /* Coins arrondis */
-  box-shadow: 0 0 20px rgba(255, 203, 5, 0.6); /* Ombre */
-  overflow: hidden; /* Masque le contenu débordant */
-  background: linear-gradient(135deg, #fffde7, #fff59d); /* Dégradé de couleurs */
-  position: relative; /* Position relative */
-  cursor: pointer; /* Curseur en forme de main */
-  box-sizing: border-box; /* Modèle de boîte */
+  width: 100%;
+  border: 4px solid #ee83b4;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ffd5ee;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffe4f4, #ffd5ee);
+  position: relative;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
-/* Style pour les titres */
-h3 {
-  margin-top: 15px; /* Marge supérieure */
-  color: #1976d2; /* Couleur du texte */
-}
-
-/* Style pour les images de caractères */
-.character-img {
-  max-width: 100%; /* Largeur maximale */
-  height: auto; /* Hauteur automatique */
-  display: block; /* Affiche comme un bloc */
-  border-radius: 50%; /* Forme circulaire */
-}
-
-/* Style pour l'effet de brillance */
+/* Brillance des cartes personnalisées */
 .custom-card::before {
-  content: ""; /* Contenu vide */
-  position: absolute; /* Position absolue */
-  top: -50%; /* Position en haut */
-  left: -50%; /* Position à gauche */
-  width: 200%; /* Largeur */
-  height: 200%; /* Hauteur */
+  content: "";
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0) 30%,
     rgba(255, 255, 255, 0.5) 50%,
     rgba(255, 255, 255, 0) 70%
-  ); /* Dégradé de couleurs */
-  transform: rotate(25deg); /* Rotation */
-  animation: shimmer 3s infinite; /* Animation */
-  border-radius: 20px; /* Coins arrondis */
+  );
+  transform: rotate(25deg);
+  animation: shimmer 3s infinite;
+  border-radius: 20px;
+  position: absolute;
 }
 
-/* Animation pour l'effet de brillance */
+/* ----- Images de caractères ----- */
+.character-img,
+.evolution-img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.character-img {
+  margin-top: 25px;
+}
+
+/* ----- Titres généraux ----- */
+h3 {
+  margin-top: 15px;
+  color: #1976d2;
+}
+
+/* ----- Animations ----- */
 @keyframes shimmer {
   0% {
-    transform: rotate(25deg) translate(-100%, -100%); /* Position initiale */
+    transform: rotate(25deg) translate(-100%, -100%);
   }
   100% {
-    transform: rotate(25deg) translate(100%, 100%); /* Position finale */
+    transform: rotate(25deg) translate(100%, 100%);
   }
 }
 
-/* Animation pour l'effet de rétrécissement */
 @keyframes shrinkToButton {
   0% {
-    transform: scale(1); /* Échelle initiale */
-    opacity: 1; /* Opacité initiale */
-    height: auto; /* Hauteur initiale */
+    transform: scale(1);
+    opacity: 1;
+    height: auto;
   }
   100% {
-    transform: scale(0); /* Échelle finale */
-    opacity: 0; /* Opacité finale */
-    height: 0; /* Hauteur finale */
-    padding: 0; /* Espacement interne final */
-    margin: 0; /* Marge finale */
+    transform: scale(0);
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
   }
 }
 
-/* Style pour le mode sombre */
-body.dark .card-container.ranged {
-  animation: shrinkToButton 0.5s forwards; /* Animation */
+.ranged {
+  animation: shrinkToButton 0.5s forwards;
 }
 
-/* Style pour le conteneur de carte rétréci */
-.card-container.ranged {
-  animation: shrinkToButton 0.5s forwards; /* Animation */
+/* ======= SWIPER SLIDER ======= */
+#swiperProjectContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.swiper {
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.slide-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.slide-content h3 {
+  margin-top: 15px;
+  font-size: 1.25rem;
+}
+
+.slide-content p {
+  color: #555;
+  font-size: 1rem;
 }
 
 /* ======= FORMULAIRE ======= */
-
-/* Style pour les champs de saisie et zones de texte */
 form input,
 form textarea {
-  width: 100%; /* Largeur maximale */
-  padding: 10px; /* Espacement interne */
-  margin-top: 5px; /* Marge supérieure */
-  border-radius: 5px; /* Coins arrondis */
-  border: 1px solid #ccc; /* Bordure */
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-/* Style pour les boutons de formulaire */
 form button {
-  padding: 10px 20px; /* Espacement interne */
-  border: none; /* Pas de bordure */
-  background-color: #333; /* Couleur de fond */
-  color: white; /* Couleur du texte */
-  border-radius: 5px; /* Coins arrondis */
-  cursor: pointer; /* Curseur en forme de main */
+  padding: 10px 20px;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* ======= CONTACT ======= */
-
-/* Style pour la section de contact */
 .contact {
-  display: grid; /* Affiche en grille */
-  gap: 1rem; /* Espacement entre les éléments */
+  display: grid;
+  gap: 1rem;
 }
 
-/* Style pour les cartes de contact */
 .contact-card {
-  text-align: center; /* Alignement du texte */
-  margin-top: 15px; /* Marge supérieure */
+  text-align: center;
+  margin-top: 15px;
 }
 
-/* Style pour les liens de contact */
 .contact-card a {
-  color: #25D366; /* Couleur du texte */
-  text-decoration: none; /* Pas de soulignement */
-  font-weight: bold; /* Texte en gras */
+  color: #25D366;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* Style au survol des liens de contact */
 .contact-card a:hover {
-  text-decoration: underline; /* Soulignement */
+  text-decoration: underline;
 }
+
 
 /* ======= MEDIA QUERIES, RESPONSIVE STYLES ======= */
 
-/* Styles pour les écrans de largeur maximale de 600px */
+/* Styles communs à la carte pour tous les écrans */
+.card-container {
+  box-sizing: border-box;
+}
+
+.card-flip {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.card-face {
+  font-size: 0.9rem;
+}
+
+.card-face h4 {
+  margin: 10px 0;
+}
+
+.card-face p {
+  margin-bottom: 10px;
+}
+
+/* Table commune : les cellules alignées à gauche par défaut */
+.table th,
+.table td {
+  text-align: left;
+}
+
+/* === Écrans de largeur maximale de 600px === */
 @media (max-width: 600px) {
   .card-container {
-    padding: 10px; /* Espacement interne */
-    width: 100%; /* Largeur maximale */
-    box-sizing: border-box; /* Modèle de boîte */
+    padding: 10px;
+    width: 100%;
   }
 
   .card-flip {
-    width: 100%; /* Largeur maximale */
-    max-width: 100%; /* Largeur maximale */
-    margin: 0 auto; /* Centrage horizontal */
-    height: 90vh; /* Hauteur */
+    width: 100%;
+    height: 90vh;
   }
 
   .card-flip .front,
   .card-flip .back {
-    min-height: 100%; /* Hauteur minimale */
-    overflow-y: auto; /* Défilement vertical si nécessaire */
+    min-height: 100%;
   }
 
   .card-face {
-    padding: 1rem; /* Espacement interne */
-    font-size: 0.9rem; /* Taille de la police */
-    overflow-y: auto; /* Défilement vertical si nécessaire */
-  }
-
-  .card-face p {
-    font-size: 14px; /* Taille de la police */
-    margin-bottom: 10px; /* Marge inférieure */        
+    padding: 1rem;
   }
 
   .card-face h4 {
-    margin-top: 10px; /* Marge supérieure */
-    margin-bottom: 10px; /* Marge inférieure */
-    font-size: 18px; /* Taille de la police */
+    font-size: 18px;
   }
 
+  .card-face p {
+    font-size: 14px;
+  }
+
+  /* Table : empilée pour mobile */
   .table {
-    display: block; /* Affiche comme un bloc */
-    overflow-x: auto; /* Défilement horizontal si nécessaire */
-    white-space: nowrap; /* Pas de retour à la ligne */
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 
   .table thead,
@@ -548,154 +600,143 @@ form button {
   .table th,
   .table td,
   .table tr {
-    display: block; /* Affiche comme un bloc */
-    width: auto; /* Largeur automatique */
-    white-space: normal; /* Retour à la ligne */
+    display: block;
+    width: auto;
+    white-space: normal;
   }
 
-  .table td,
-  .table th {
-    padding: 10px; /* Espacement interne */
-    border-bottom: 1px solid #ddd; /* Bordure inférieure */
-  }
-
-  .table th {
-    text-align: left; /* Alignement du texte */
-  }
-
+  .table th,
   .table td {
-    text-align: left; /* Alignement du texte */
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
   }
 
   .table tr {
-    border-bottom: 1px solid #ccc; /* Bordure inférieure */
-    display: block; /* Affiche comme un bloc */
-    margin-bottom: 15px; /* Marge inférieure */
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
   }
 }
 
-/* Styles pour les écrans de largeur entre 601px et 900px */
+/* === Écrans de largeur entre 601px et 900px === */
 @media (min-width: 601px) and (max-width: 900px) {
   .card-container {
-    max-width: 90%; /* Largeur maximale */
-    margin: 0 auto; /* Centrage horizontal */
-  }
-
-  .card-flip {
-    max-width: 100%; /* Largeur maximale */
+    max-width: 90%;
   }
 
   .card-face {
-    padding: 1.2rem; /* Espacement interne */
-    font-size: 0.9rem; /* Taille de la police */
+    padding: 1.2rem;
   }
 }
 
-/* Styles pour les écrans de largeur minimale de 901px */
+/* === Écrans de largeur minimale de 901px === */
 @media (min-width: 901px) {
   .grid-container {
-    grid-template-areas: /* Définit les zones de la grille */
+    display: grid;
+    grid-template-areas:
       "header header"
       "aside main"
       "footer footer";
-    grid-template-columns: 1fr 2fr; /* Définit les colonnes de la grille */
+    grid-template-columns: 1fr 2fr;
   }
 
   aside {
-    text-align: center; /* Alignement du texte */
+    text-align: center;
   }
 
   aside img {
-    max-width: 20%; /* Largeur maximale */
-    margin-bottom: 20px; /* Marge inférieure */
+    max-width: 20%;
+    margin-bottom: 20px;
   }
 
   .nav-menu {
-    justify-content: center; /* Centrage horizontal */
+    justify-content: center;
   }
 
   .contact {
-    grid-template-columns: repeat(2, max-content); /* Définit les colonnes de la grille */
-    justify-content: center; /* Centrage horizontal */
-    column-gap: 3rem; /* Espacement entre les colonnes */
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    column-gap: 3rem;
   }
 }
 
 /* ======= DARK MODE ======= */
-
-/* Style pour le mode sombre */
 body.dark {
-  background-color: #121212; /* Couleur de fond */
-  color: #eee; /* Couleur du texte */
+  background-color: #121212;
+  color: #eee;
 }
 
-/* Style pour l'en-tête et le pied de page en mode sombre */
 body.dark header,
 body.dark footer {
-  background-color: #1f1f1f; /* Couleur de fond */
+  background-color: #1f1f1f;
 }
 
-/* Style pour la barre latérale et la section principale en mode sombre */
 body.dark aside#profilAside,
 body.dark main {
-  background-color: #2a2a2a; /* Couleur de fond */
+  background-color: #2a2a2a;
 }
 
-/* Style pour les sections en mode sombre */
 body.dark section {
-  background-color: #1e1e1e; /* Couleur de fond */
-  border: 1px solid #444; /* Bordure */
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05); /* Ombre */
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
 }
 
-/* Style pour les liens du menu en mode sombre */
 body.dark .nav-menu a {
-  background-color: #222; /* Couleur de fond */
+  background-color: #222;
 }
 
-/* Style au survol des liens du menu en mode sombre */
 body.dark .nav-menu a:hover {
-  background-color: #444; /* Changement de couleur de fond */
+  background-color: #444;
 }
 
-/* Style pour les champs de saisie et zones de texte en mode sombre */
 body.dark input,
 body.dark textarea {
-  background-color: #444; /* Couleur de fond */
-  color: white; /* Couleur du texte */
-  border: 1px solid #666; /* Bordure */
+  background-color: #444;
+  color: white;
+  border: 1px solid #666;
 }
 
 /* Style pour les faces de la carte en mode sombre */
 body.dark .card-face {
-  background-color: #31333d; /* Couleur de fond */
-  color: #f0f1f0; /* Couleur du texte */
+  background-color: #31333d;
+  color: #f0f1f0;
 }
+
+body.dark .card-face.front {
+  background-image: url('/assets/image/versionpixlrcharlenepositive.png');
+  background-size: cover;
+}
+
 
 /* Style pour les cartes personnalisées en mode sombre */
 body.dark .custom-card {
-  border: 4px solid #555; /* Bordure */
-  box-shadow: 0 0 20px rgba(100, 100, 100, 0.6); /* Ombre */
-  background: linear-gradient(135deg, #2a2a2a, #3e3e3e); /* Dégradé de couleurs */
+  border: 4px solid #555;
+  box-shadow: 0 0 20px rgba(100, 100, 100, 0.6);
+  background: linear-gradient(135deg, #2a2a2a, #3e3e3e);  
 }
 
-/* Style pour l'effet de brillance en mode sombre */
 body.dark .custom-card::before {
   background: linear-gradient(
     120deg,
     rgba(60, 60, 60, 0) 30%,
     rgba(100, 100, 100, 0.5) 50%,
     rgba(60, 60, 60, 0) 70%
-  ); /* Dégradé de couleurs */
+  );
 }
 
 /* Style pour les badges rares en mode sombre */
 body.dark .rare-badge {
-  background: linear-gradient(45deg, #8a6d3b, #5d4037); /* Dégradé de couleurs */
-  color: #fff; /* Couleur du texte */
+  background: linear-gradient(45deg, #8a6d3b, #5d4037);
+  color: #fff;
 }
 
 /* Style pour les titres en mode sombre */
 body.dark h3 {
-  color: #bb86fc; /* Couleur du texte */
+  color: #bb86fc;
+}
+
+/* Style pour le conteneur de carte rétréci en mode sombre */
+body.dark .card-container.ranged {
+  animation: shrinkToButton 0.5s forwards;
 }

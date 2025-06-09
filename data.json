@@ -6,8 +6,8 @@
       "rue": "***",
       "ville": "Saint-Martin-de-Seignanx"
     },
-    "interets": ["Calligraphie", "Musique", "Concerts", "Lecture", "Marche"],
-    "competences": ["HTML", "CSS", "JavaScript", "Bootstrap", "WordPress", "Responsive Design", "UX"],
+    "interets": ["Marche", "Musique", "Lecture", "Ecriture", "Calligraphie"],
+    "competences": ["WordPress", "UX Design", "HTML", "CSS", "JavaScript"],
     "parcours": [
       {
         "poste":"Chargée de communication numérique et marketing",
@@ -19,13 +19,27 @@
         "poste":"Chargée de communication digitale",
         "entreprise":"Amoono, Paris",
         "periode":"avril 2021 - novembre 2022",
-        "details":"Collaboration avec les développeurs pour intégrer et optimiser les contenus des sites ou applications web. Réalisation de maquettes UI design pour améliorer l'expèrience utilisateur. Maintenance et mises à jour des sites via WordPress. Support technique."
+        "details":"Collaboration avec les développeurs pour intégrer et optimiser les contenus des sites ou applications web. Réalisation de maquettes UI design pour améliorer l'expèrience utilisateur. Maintenance et mises à jour des sites via WordPress. Support technique"
       },
       {
         "poste":"Projets universitaires",
         "entreprise":"Icadémie, Toulon",
         "periode":"2021-2024",
         "details":"Conception d'un site e-commerce avec WordPress, incluant personnalisation via HTML et CSS. Réalisation de wireframes et de prototypes fonctionnels en UI/UX design. Veille technologique et tests utilisateurs pour garantir l'efficacité de la conception"
+      },
+
+      {
+        "poste":"Coach vocal",
+        "entreprise":"Grand Est Team SARL, Strasbourg",
+        "periode":"2019-2024",
+        "details":"Projet entrepreneurial de coaching vocal en ligne et physique. Création de contenu pédagogique et gestion de la présence en ligne via un site web et les réseaux sociaux. Développement de programmes personnalisés pour les clients"
+      },
+
+      {
+        "poste":"Infirmière DE",
+        "entreprise":"Hôpital de l'Eau vive - ASM 13, Paris 13e",
+        "periode":"2015-2019",
+        "details":"Lors de mon expérience en tant qu'infirmière en psychiatrie en service fermé, j'étais référente des logiciels de dossiers patients et pharmacie, ainsi que des activités pédagogiques et thérapeutiques. J'assurais la gestion des plannings des soignants, l'accompagnement des patients hospitalisés sous contrainte et leur entourage, ainsi que la mise en place des projets de soins. J'ai également animé des activités ludiques à visée psychothérapique (chant, Dixiludo) et encadré des étudiants en stage. Enfin, j'étais correspondante en hygiène, en lien avec la direction et les équipes."
       }
     ]
 

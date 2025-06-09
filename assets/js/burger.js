@@ -1,6 +1,7 @@
 // Fonction pour basculer le mode sombre et sauvegarder l'état dans localStorage
-function toggleDarkMode() { // Cette fonction bascule la classe dark sur le corps du document et sauvegarde l'état actuel du mode sombre dans localStorage
-  document.body.classList.toggle("dark"); 
+function toggleDarkMode() {
+  // Cette fonction bascule la classe dark sur le corps du document et sauvegarde l'état actuel du mode sombre dans localStorage
+  document.body.classList.toggle("dark");
 
   // Vérifier si le mode sombre est activé
   const isDarkMode = document.body.classList.contains("dark");
@@ -10,7 +11,8 @@ function toggleDarkMode() { // Cette fonction bascule la classe dark sur le corp
 }
 
 // Fonction pour appliquer le mode sombre sauvegardé au chargement de la page
-function applySavedDarkMode() { // Cette fonction vérifie si une préférence de mode sombre est sauvegardée dans localStorage et l'applique au chargement de la page.
+function applySavedDarkMode() {
+  // Cette fonction vérifie si une préférence de mode sombre est sauvegardée dans localStorage et l'applique au chargement de la page.
   const savedDarkMode = localStorage.getItem("darkMode");
 
   // Si une préférence est sauvegardée, l'appliquer
@@ -22,31 +24,31 @@ function applySavedDarkMode() { // Cette fonction vérifie si une préférence d
 // Fonction principale pour créer le menu burger
 export function createBurgerMenu() {
   // Crée le bouton burger
-  const burgerButton = document.createElement('button');
-  burgerButton.textContent = '☰'; // icône burger
-  burgerButton.style.fontSize = '24px';
-  burgerButton.style.cursor = 'pointer';
-  burgerButton.style.position = 'fixed';
-  burgerButton.style.top = '50%'; // Positionné au milieu verticalement
-  burgerButton.style.right = '20px';
-  burgerButton.style.zIndex = '1000';
-  burgerButton.style.transform = 'translateY(-50%)'; // Centrer verticalement
+  const burgerButton = document.createElement("button");
+  burgerButton.textContent = "☰"; // icône burger
+  burgerButton.style.fontSize = "24px";
+  burgerButton.style.cursor = "pointer";
+  burgerButton.style.position = "fixed";
+  burgerButton.style.top = "50%"; // Positionné au milieu verticalement
+  burgerButton.style.right = "20px";
+  burgerButton.style.zIndex = "1000";
+  burgerButton.style.transform = "translateY(-50%)"; // Centrer verticalement
 
   // Crée le menu (caché par défaut)
-  const menu = document.createElement('nav');
+  const menu = document.createElement("nav");
   const style = menu.style;
 
-  style.position = 'fixed';
-  style.top = '50%'; // Positionné au milieu verticalement
-  style.right = '-200px'; // caché à droite
-  style.width = '200px';
-  style.height = 'auto';
-  style.background = '#333';
-  style.color = '#fff';
-  style.padding = '20px';
-  style.transition = 'right 0.3s';
-  style.zIndex = '999';
-  style.transform = 'translateY(-50%)'; // Centrer verticalement
+  style.position = "fixed";
+  style.top = "50%"; // Positionné au milieu verticalement
+  style.right = "-200px"; // caché à droite
+  style.width = "200px";
+  style.height = "auto";
+  style.background = "#333";
+  style.color = "#fff";
+  style.padding = "20px";
+  style.transition = "right 0.3s";
+  style.zIndex = "999";
+  style.transform = "translateY(-50%)"; // Centrer verticalement
 
   // Ajoute du contenu au menu
   menu.innerHTML = `
@@ -60,11 +62,12 @@ export function createBurgerMenu() {
   `;
 
   // Quand on clique sur le bouton burger
-  burgerButton.addEventListener('click', () => { // Un écouteur d'événement est ajouté au bouton de mode sombre dans le menu burger pour appeler toggleDarkMode lorsque le bouton est cliqué
-    if (menu.style.right === '0px') {
-      menu.style.right = '-200px'; // ferme
+  burgerButton.addEventListener("click", () => {
+    // Un écouteur d'événement est ajouté au bouton de mode sombre dans le menu burger pour appeler toggleDarkMode lorsque le bouton est cliqué
+    if (menu.style.right === "0px") {
+      menu.style.right = "-200px"; // ferme
     } else {
-      menu.style.right = '0px'; // ouvre
+      menu.style.right = "0px"; // ouvre
     }
   });
 

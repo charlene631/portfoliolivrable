@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("swiperProjectContainer");
   console.log(container);
@@ -11,18 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const slidesData = [ // variable de tableau d'objets des projets de développement web et web mobile pour la création du carousel
     {
       titre: "Projet Site de rencontre",
-      description: "Un site dynamique en HTML/CSS/Javascript",
-      image: "assets/image/accueil.png"
+      description: "Un site dynamique en HTML/CSS/Javascript en cours de développement. Projet fil rouge de la formation DWWM (Développeur Web et Web Mobile) de l'AFEC.",
+      image: "assets/image/accueil.png",
+      lien:"https://charlene149611.github.io/site-de-rencontre/"
     },
     {
       titre: "Premier projet React",
-      description: "Un petit projet interactif de compteur utilisant React et Vite",
-      image: "assets/image/premierprojetreact.png"
+      description: "Un petit projet interactif de mini jeu utilisant React et Vite",
+      image: "assets/image/premierprojetreact.png",
+      lien: "https://charlene149611.github.io/mini-jeu/"
     },
     {
-      titre: "Projet Portfolio",
-      description: "Un site statique incluant des animations et du dynamisme en HTML/CSS/Javascript. Le projet utilise également des bibliothèques externes telles que Bootstrap et Swipe, ainsi que des modules.",
-      image: "assets/image/portfolio.png"
+      titre: "Portfolio - Version 2, qui est la première version de mon portfolio",
+      description: "Un site statique incluant des animations et du dynamisme en HTML/CSS/Javascript et du JSON. Le projet utilise également des bibliothèques externes telles que Bootstrap et Swipe.",
+      image: "assets/image/portfolio.png",
+      lien:"https://charlene149611.github.io/portfoliov2/"     
     }
   ];
 
@@ -44,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const slideElement = document.createElement("div"); // Création du carousel et importation des données de la variable
     slideElement.className = "swiper-slide";
     slideElement.innerHTML = `
+    <a href="${slide.lien}" target="_blank" class="slide-link">
       <div class="slide-content">
         <img src="${slide.image}" alt="${slide.titre}" style="max-width: 100%; border-radius: 8px;">
         <h3>${slide.titre}</h3>
