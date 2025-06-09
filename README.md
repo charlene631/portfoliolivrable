@@ -12,8 +12,8 @@ Bienvenue sur mon portfolio en ligne ! Ce projet présente mes compétences, mes
 - **projects/** : Dossier contenant les détails des projets.
 
 
-Portfolio livrable/
-│
+Portfoliolivrable/
+├── README.md
 ├── index.html
 ├── data.json
 └── assets/
