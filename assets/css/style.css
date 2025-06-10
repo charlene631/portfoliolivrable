@@ -61,7 +61,7 @@ button:hover {
   color: #18396a;
   font-style: bold;
   background-color: #18396a;
-  background-image: url('assets/image/diamantcristal.png');
+  background-image: url('https://charlene149611.github.io/PORTFOLIOLIVRABLE/assets/image/diamantcristal.png');
   background-size: cover;
   background-position: center;
   border: none;
@@ -331,7 +331,7 @@ footer .social-links a:hover {
 
 .card-face.front {
   z-index: 2;
-  background-image: url('assets/image/versionpixlrcharlenepositive.png');
+  background-image: url('https://charlene149611.github.io/PORTFOLIOLIVRABLE/assets/image/versionpixlrcharlenepositive.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
