@@ -331,6 +331,7 @@ footer .social-links a:hover {
 
 .card-face.front {
   z-index: 2;
+  backface-visibility: hidden;
   background-image: url('https://charlene149611.github.io/PORTFOLIOLIVRABLE/assets/image/versionpixlrcharlenepositive.png');
   background-size: cover;
   background-position: center;
