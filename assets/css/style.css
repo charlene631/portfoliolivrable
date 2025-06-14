@@ -226,7 +226,6 @@ header h1 {
 }
 
 #profilSection {
-  border: 2px solid blue;
   padding: 20px;  
 }
 
@@ -479,7 +478,7 @@ h3 {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-}
+}  
 
 .slide-content img {
   max-width: 100%;

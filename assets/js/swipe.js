@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const slideElement = document.createElement("div"); // Création du carousel et importation des données de la variable
     slideElement.className = "swiper-slide";
     slideElement.innerHTML = `
-    <a href="${slide.lien}" target="_blank" class="slide-link">
+    <a href="${slide.lien}" target="_blank" class="slide-link" style="text-decoration: none;">
       <div class="slide-content">
         <img src="${slide.image}" alt="${slide.titre}" style="max-width: 100%; border-radius: 8px;">
         <h3>${slide.titre}</h3>
