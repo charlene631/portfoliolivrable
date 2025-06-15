@@ -42,8 +42,8 @@ document.getElementById("contactLink")?.addEventListener("click", (e) => {
 });
 
 // Toggle profil
-const openSound = new Audio("assets/sound/Shrinking Pokeball.mp3");
-const closeSound = new Audio("assets/sound/Growing Pokeball.mp3");
+const openSound = new Audio("assets/sound/Pokemon out.mp3");
+const closeSound = new Audio("assets/sound/Pokemon return.mp3");
 
 const buttonProfile = document.getElementById("showProfile");
 const sectionProfile = document.getElementById("profilSection");
