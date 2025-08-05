@@ -11,7 +11,7 @@ export const createUser = async ({ name, lastname, email, password, role = 'user
 
 // Récupérer un utilisateur par email
 export const getUserByEmail = async (email) => {
-  const [rows] = await pool.execute(`SELECT * FROM users WHERE email = ?`, [email]);
+  const [rows] = await pool.execute(`SELECT * FROM users WHERE email = ?`, [email ?? null]);
   return rows[0];
 };
 
@@ -20,3 +20,24 @@ export const getUserById = async (id) => {
   const [rows] = await pool.execute(`SELECT * FROM users WHERE id = ?`, [id]);
   return rows[0];
 };
+
+// Liste tous les utilisateurs
+export const getAllUsers = async () => {
+  const [rows] = await pool.execute(`SELECT * FROM users`);
+  return rows;
+};
+
+// Met à jour un utilisateur par ID
+export const updateUserById = async (id, { name, lastname, email, role }) => {
+  const sql = `UPDATE users SET name = ?, lastname = ?, email = ?, role = ? WHERE id = ?`;
+  const [result] = await pool.execute(sql, [name, lastname, email, role, id]);
+  return result;
+};
+
+// Supprime un utilisateur par ID
+export const deleteUserById = async (id) => {
+  const sql = `DELETE FROM users WHERE id = ?`;
+  const [result] = await pool.execute(sql, [id]);
+  return result;
+};
+

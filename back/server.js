@@ -1,6 +1,7 @@
 import express from 'express';
 import mysql from 'mysql2/promise';
 import authRoutes from './routes/authRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 const port = 3000
@@ -24,6 +25,7 @@ res.status(500).json({ error: error.message });
 }
 });
 app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
 
 
 app.listen(port, () => {

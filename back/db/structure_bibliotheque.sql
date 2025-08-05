@@ -5,7 +5,8 @@ CREATE TABLE `users` (
   `email` VARCHAR(255) UNIQUE NOT NULL,
   `password` VARCHAR(255) NOT NULL,
   `role` ENUM('user', 'admin') NOT NULL DEFAULT 'user',
-  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
+  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+  `is_verified` BOOLEAN DEFAULT FALSE  
 );
 
 CREATE TABLE `categories` (
@@ -24,6 +25,6 @@ CREATE TABLE `documents` (
   `updated_at` datetime
 );
 
-ALTER TABLE `documents` ADD FOREIGN KEY (`auteur_id`) REFERENCES `utilisateurs` (`id`);
+ALTER TABLE `documents` ADD FOREIGN KEY (`auteur_id`) REFERENCES `users` (`id`);
 
 ALTER TABLE `documents` ADD FOREIGN KEY (`categorie_id`) REFERENCES `categories` (`id`);

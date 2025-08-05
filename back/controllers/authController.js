@@ -41,8 +41,13 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   const { email, password } = req.body;
 
+  // Vérifie que les champs sont bien présents
+  if (!email || !password) {
+    return res.status(400).json({ message: "Email et mot de passe requis." });
+  }
+
   try {
-    const user = await getUserByEmail(email, password);
+    const user = await getUserByEmail(email);
 
     if (!user) {
       return res.status(401).json({ message: "Utilisateur non trouvé." });
