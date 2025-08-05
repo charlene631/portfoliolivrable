@@ -1,4 +1,4 @@
-CREATE TABLE `utilisateurs` (
+CREATE TABLE `utilisateursgit st` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255),
   `lastname` varchar(255),
