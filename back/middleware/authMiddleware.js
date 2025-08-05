@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export const verifyToken = (req, res, next) => {
-  console.log("��� Email de vérification envoyé :", info.response);
+    const authHeader = req.headers['authorization'];
   if (!authHeader) return res.status(401).json({ message: "Token requis." });
 
   const token = authHeader.split(" ")[1];

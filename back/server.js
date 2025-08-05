@@ -1,5 +1,6 @@
 import express from 'express';
 import mysql from 'mysql2/promise';
+import authRoutes from './routes/authRoutes.js';
 
 const app = express();
 const port = 3000
@@ -22,6 +23,8 @@ res.json(rows);
 res.status(500).json({ error: error.message });
 }
 });
+app.use('/api/auth', authRoutes);
+
 
 app.listen(port, () => {
 console.log(`serveur demarré sur http://localhost:${port}`);
