@@ -1,4 +1,4 @@
-import db from '../config/db.js';
+import pool from '../config/db.js';
 
 const categoryModel = {
 
@@ -6,7 +6,7 @@ const categoryModel = {
     // http://localhost:3000/categories/getAll
     async getAll() {
         try {
-            const response = await db.query("SELECT * FROM categories WHERE 1")
+            const response = await pool.query("SELECT * FROM categories WHERE 1")
             return response
         }
         catch (error) {
@@ -19,7 +19,7 @@ const categoryModel = {
     // http://localhost:3000/categories/getOne
     async getOne(id) {
         try {
-            const response = await db.query(`SELECT * FROM categories WHERE id = ?`, [id])
+            const response = await pool.query(`SELECT * FROM categories WHERE id = ?`, [id])
             return response
         }
         catch (error) {
@@ -36,7 +36,7 @@ const categoryModel = {
             const value = data.newValue
             const id = data.id
 
-            const tableColumn = await db.query('SHOW COLUMNS FROM categories;')
+            const tableColumn = await pool.query('SHOW COLUMNS FROM categories;')
             tableColumn[0].forEach(element => {
                 columnTable.push(element.Field)
             });
@@ -45,7 +45,7 @@ const categoryModel = {
                 }
 
             const query = `UPDATE categories SET ${column} = ? WHERE id = ? `
-            const response = await db.query(query, [value, id])
+            const response = await pool.query(query, [value, id])
             return response
         }
         catch (error) {
@@ -58,7 +58,7 @@ const categoryModel = {
     async deleteOne(data) {
         try {
             const id = data.id
-            const response = await db.query(`DELETE FROM categories WHERE id = ? `, [id])
+            const response = await pool.query(`DELETE FROM categories WHERE id = ? `, [id])
             return response
         }
         catch (error) {
@@ -71,7 +71,7 @@ const categoryModel = {
     async addOne(data) {
         try {
             const name = data.name
-            const response = await db.query(`INSERT INTO categories (name) VALUES (?) `, [name])
+            const response = await pool.query(`INSERT INTO categories (name) VALUES (?) `, [name])
             return response
         }
         catch (error) {

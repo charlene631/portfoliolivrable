@@ -1,5 +1,5 @@
 import express from 'express';
-import db from './config/db.js'
+import pool from './config/db.js'
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import categoryRouter from './routes/categoryRoutes.js';
@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.get('/', async (req, res) => {
   try {
-    const [rows] = await db.query("SHOW TABLES");
+    const [rows] = await pool.query("SHOW TABLES");
     res.json(rows);
   } catch (error) {
     res.status(500).json({ error: error.message });
