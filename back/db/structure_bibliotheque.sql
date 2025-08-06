@@ -27,3 +27,4 @@ CREATE TABLE `documents` (
 ALTER TABLE `documents` ADD FOREIGN KEY (`auteur_id`) REFERENCES `utilisateurs` (`id`);
 
 ALTER TABLE `documents` ADD FOREIGN KEY (`categorie_id`) REFERENCES `categories` (`id`);
+
