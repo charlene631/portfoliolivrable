@@ -1,10 +1,10 @@
 import pool from '../config/db.js';
 
 // Créer un utilisateur
-export const createUser = async ({ name, lastname, email, password, role = 'user' }) => {
+export const createUser = async ({ name, lastname, email, password, role = 'user', is_verified = false }) => {
   const [result] = await pool.execute(
-    `INSERT INTO users (name, lastname, email, password, role) VALUES (?, ?, ?, ?, ?)`,
-    [name, lastname, email, password, role]
+    `INSERT INTO users (name, lastname, email, password, role, is_verified) VALUES (?, ?, ?, ?, ?, ?)`,
+    [name, lastname, email, password, role, is_verified]
   );
   return result.insertId;
 };
@@ -41,3 +41,10 @@ export const deleteUserById = async (id) => {
   return result;
 };
 
+// --- NOUVELLE FONCTION ---
+// Met à jour is_verified = true pour valider l'email
+export const verifyUserEmail = async (id) => {
+  const sql = `UPDATE users SET is_verified = true WHERE id = ?`;
+  const [result] = await pool.execute(sql, [id]);
+  return result;
+};
