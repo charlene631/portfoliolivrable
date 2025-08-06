@@ -1,11 +1,12 @@
-CREATE TABLE `utilisateursgit st` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `name` varchar(255),
-  `lastname` varchar(255),
-  `email` varchar(255) UNIQUE NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `role` bool DEFAULT false,
-  `created_at` datetime
+CREATE TABLE `users` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `lastname` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) UNIQUE NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `role` ENUM('user', 'admin') NOT NULL DEFAULT 'user',
+  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+  `is_verified` BOOLEAN DEFAULT FALSE  
 );
 
 CREATE TABLE `categories` (
@@ -24,7 +25,7 @@ CREATE TABLE `documents` (
   `updated_at` datetime
 );
 
-ALTER TABLE `documents` ADD FOREIGN KEY (`auteur_id`) REFERENCES `utilisateurs` (`id`);
+ALTER TABLE `documents` ADD FOREIGN KEY (`auteur_id`) REFERENCES `users` (`id`);
 
 ALTER TABLE `documents` ADD FOREIGN KEY (`categorie_id`) REFERENCES `categories` (`id`);
 
