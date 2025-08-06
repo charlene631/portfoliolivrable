@@ -31,3 +31,24 @@ app.use('/api/users', userRoutes);
 app.listen(port, () => {
 console.log(`serveur demarré sur http://localhost:${port}`);
 });
+import dotenv from 'dotenv';
+
+import documentsRouter from './routes/documentsRoutes.js'; 
+
+dotenv.config();
+
+
+
+app.use(express.json());
+
+//POur tester : A supp apres une fois que j'ai categorie et utilisateur
+// app.get('/', (req, res) => {
+//   res.send('API fonctionne !');
+// });
+
+
+app.use('/documents', documentsRouter);
+
+app.listen(port, () => {
+  console.log(`Serveur démarré sur http://localhost:${port}`);
+});
