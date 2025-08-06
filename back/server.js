@@ -1,12 +1,13 @@
 import express from 'express';
-import categoryRouter from './routes/categoryRoutes.js';
 import db from './config/db.js'
+import authRoutes from './routes/authRoutes.js';
+import userRoutes from './routes/userRoutes.js';
+import categoryRouter from './routes/categoryRoutes.js';
 
 const app = express();
 const port = 3000
 
 app.use(express.json());
-
 
 app.get('/', async (req, res) => {
   try {
@@ -17,8 +18,10 @@ app.get('/', async (req, res) => {
   }
 });
 
-app.use('/categories',categoryRouter)
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
 
+app.use('/categories',categoryRouter)
 
 app.listen(port, () => {
   console.log(`serveur demarré sur http://localhost:${port}`);
