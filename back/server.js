@@ -3,9 +3,12 @@ import pool from './config/db.js'
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import categoryRouter from './routes/categoryRoutes.js';
+import documentsRouter from './routes/documentsRoutes.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
-const port = 3000
+const port = 3000;
 
 app.use(express.json());
 
@@ -22,7 +25,9 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 
 app.use('/categories',categoryRouter)
-
+    
+app.use('/documents', documentsRouter);
+    
 app.listen(port, () => {
   console.log(`serveur demarré sur http://localhost:${port}`);
 });
