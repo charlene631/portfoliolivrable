@@ -1,6 +1,7 @@
 import Card from "./Card"
 
-const Main = () => {
+const Main = ({data}) => {
+    console.log(data)
     return (
         <main style={{
             display:"flex", 
@@ -9,11 +10,7 @@ const Main = () => {
             flexWrap:"wrap", 
             margin:"25px"
         }}>
-            <Card image="../../public/audio.png"/>
-            <Card image="../../public/pdf.webp"/>
-            <Card image="../../public/texte.png"/>
-            <Card image="../../public/video.png"/>
-            <Card image="../../public/video.png"/>
+            { data.map((d, i)=>{return(<Card key={i} category={d.format} image={d.cloudinary_url} title={d.title} description={d.description}/>)})}
         </main>
     )
 }
