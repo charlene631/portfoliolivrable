@@ -34,5 +34,5 @@ app.use('/documents', documentsRouter);
 
 
 app.listen(port, () => {
-  console.log(`✅ Serveur démarré sur le port ${port}`);
+  console.log(`Serveur démarré sur le port ${port}`);
 });
