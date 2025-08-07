@@ -57,3 +57,8 @@ export const deleteUser = async (req, res) => {
     res.status(500).json({ message: "Erreur lors de la suppression." });
   }
 };
+
+// Exemple de route protégée sans admin (nécessite une authentification)
+export const protectedExample = (req, res) => {
+  res.json({ message: `Bonjour ${req.user.email}, accès autorisé !` });
+};
