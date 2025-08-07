@@ -46,7 +46,8 @@ CREATE TABLE `documents` (
 ALTER TABLE `documents`
 ADD FOREIGN KEY (`auteur_id`) REFERENCES `users` (`id`);
 ALTER TABLE `documents`
-ADD FOREIGN KEY (`categorie_id`) REFERENCES `categories` (`id`);
+ADD FOREIGN KEY (`categorie_id`) REFERENCES `categories` (`id`)
+ON DELETE SET NULL;
 
 INSERT INTO documents (
     title,
