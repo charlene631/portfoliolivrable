@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
-const Card = ({ image }) => {
+const Card = ({ image, title, description, category }) => {
     return (
         <div className="card" style={{ width: "18rem" }}>
+            <p style={{display: "flex",justifyContent:"center", backgroundColor:"red", width:"auto"}}>{category}</p>
             <div
                 style={{
                     height: "150px",
@@ -16,10 +17,12 @@ const Card = ({ image }) => {
             >
             </div>
             <div className="card-body">
-                <h5 className="card-title">{"title"}</h5>
-                <p className="card-text">{"categorie, fhfdhcfjhedcshqgdchjgdfhvgsfrfreferferf"}</p>
-               <Link to={'/document'}> <p className="btn btn-primary">En savoir plus</p></Link>
+                <h5 className="card-title">{title}</h5>
+                <p  className="card-text">{description}</p>
+               
             </div>
+            
+            <Link to={'/document'}> <p style={{width:"100%"}}  className="btn btn-primary">En savoir plus</p></Link>
         </div>
     );
 };
