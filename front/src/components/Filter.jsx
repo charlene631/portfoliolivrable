@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Filter = ({ data }) => {
+const filterCategory = ({ data }) => {
 const [document, setDocument] = useState([])
 
     const filterCategory =(e)=>{
@@ -29,7 +29,7 @@ const [document, setDocument] = useState([])
             {data && data.map((d, i) => {
                 return (
                     <div
-                    id={d.name}
+                    id={d.id}
                     key={i}
                        onClick={filterCategory}
                         style={{
@@ -42,4 +42,4 @@ const [document, setDocument] = useState([])
         </div>
     )
 }
-export default Filter
+export default filterCategory

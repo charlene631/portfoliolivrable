@@ -1,4 +1,4 @@
-import Filter from "../components/Filter"
+import FilterCategory from "../components/Filter"
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 import Main from "../components/Main"
@@ -7,7 +7,7 @@ const Home = ({data})=>{
     return(
         <>
         <Header/>
-        <Filter data={data}/>
+        <FilterCategory data={data}/>
         <Main/>
         <Footer/>
         </>
