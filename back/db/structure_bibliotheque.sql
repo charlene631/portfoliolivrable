@@ -15,17 +15,31 @@ CREATE TABLE `categories` (
 );
 
 CREATE TABLE `documents` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `id` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text,
-  `format` varchar(255),
-  `auteur_id` int,
-  `categorie_id` int,
-  `created_at` datetime,
-  `updated_at` datetime
-);
+  `format` varchar(255) DEFAULT NULL,
+  `auteur_id` int DEFAULT NULL,
+  `categorie_id` int DEFAULT NULL,
+  `cloudinary_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 ALTER TABLE `documents` ADD FOREIGN KEY (`auteur_id`) REFERENCES `users` (`id`);
 
 ALTER TABLE `documents` ADD FOREIGN KEY (`categorie_id`) REFERENCES `categories` (`id`);
+
+ALTER TABLE `documents`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `auteur_id` (`auteur_id`),
+  ADD KEY `categorie_id` (`categorie_id`);
+
+  ALTER TABLE `documents`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+  ALTER TABLE `documents`
+  ADD CONSTRAINT `documents_ibfk_1` FOREIGN KEY (`auteur_id`) REFERENCES `utilisateurs` (`id`),
+  ADD CONSTRAINT `documents_ibfk_2` FOREIGN KEY (`categorie_id`) REFERENCES `categories` (`id`);
+COMMIT;
 
