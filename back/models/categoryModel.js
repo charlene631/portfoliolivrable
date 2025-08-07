@@ -58,10 +58,12 @@ const categoryModel = {
     async deleteOne(data) {
         try {
             const id = data.id
+            console.log(id)
             const response = await pool.query(`DELETE FROM categories WHERE id = ? `, [id])
             return response
         }
         catch (error) {
+            console.error(error)
             throw new Error("Erreur model deleteOne", error)
         }
     },

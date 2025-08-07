@@ -14,12 +14,12 @@ categoryRouter.get('/getOne', categoryController.getOne);
 // modifier une catégorie existante
 // http://localhost:3000/categories/updateOne
 // body pour postman : { "column": "name",  "newValue":"updateNameCategory", "id": 1}
-categoryRouter.post('/updateOne', categoryController.updateOne);
+categoryRouter.put('/updateOne', categoryController.updateOne);
 
 // suprimer une catégorie
 // http://localhost:3000/categories/deleteOne
 // body pour postman : {"id": 1}
-categoryRouter.post('/deleteOne', categoryController.deleteOne);
+categoryRouter.delete('/deleteOne', categoryController.deleteOne);
 
 // ajouter une nouvelle categorie
 // http://localhost:3000/categories/addOne
