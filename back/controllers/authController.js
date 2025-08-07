@@ -1,10 +1,10 @@
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import {
   createUser,
   getUserByEmail,
-  verifyUserEmail
-} from '../models/userModel.js';
+  verifyUserEmail,
+} from "../models/userModel.js";
 import sendEmail from "../utils/sendEmail.js";
 import pool from "../config/db.js";
 
@@ -26,6 +26,8 @@ export const register = async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
+    console.log({ name, lastname, email, hashedPassword, role });
+
     const userId = await createUser({
       name,
       lastname,
@@ -35,7 +37,9 @@ export const register = async (req, res) => {
       is_verified: false,
     });
 
-    const verificationToken = jwt.sign({ id: userId }, JWT_SECRET, { expiresIn: "1h" });
+    const verificationToken = jwt.sign({ id: userId }, JWT_SECRET, {
+      expiresIn: "7d",
+    });
 
     const verificationUrl = `${CLIENT_URL}/api/auth/verify/${verificationToken}`;
 
@@ -48,7 +52,10 @@ export const register = async (req, res) => {
         Ce lien est valable une heure.`,
     });
 
-    res.status(201).json({ message: "Utilisateur créé. Vérifiez votre email pour activer votre compte." });
+    res.status(201).json({
+      message:
+        "Utilisateur créé. Vérifiez votre email pour activer votre compte.",
+    });
   } catch (error) {
     console.error("Erreur lors de l'inscription :", error);
     res.status(500).json({ message: "Erreur lors de l'inscription." });
@@ -59,10 +66,16 @@ export const register = async (req, res) => {
 export const verifyEmail = async (req, res) => {
   try {
     const { token } = req.params;
-    const decoded = jwt.verify(token, JWT_SECRET);
+    
 
-    const userId = decoded.id;
-    const [userRows] = await pool.query("SELECT * FROM users WHERE id = ?", [userId]);
+    const decoded = jwt.verify(token, JWT_SECRET);
+     
+
+    const userId = decoded.id || decoded.userId;
+
+    const [userRows] = await pool.query("SELECT * FROM users WHERE id = ?", [
+      userId,
+    ]);
 
     if (userRows.length === 0) {
       return res.status(404).json({ message: "Utilisateur introuvable." });
@@ -76,7 +89,10 @@ export const verifyEmail = async (req, res) => {
 
     await verifyUserEmail(userId);
 
-    res.json({ message: "Email vérifié avec succès. Vous pouvez maintenant vous connecter." });
+    res.json({
+      message:
+        "Email vérifié avec succès. Vous pouvez maintenant vous connecter.",
+    });
   } catch (error) {
     console.error("Erreur de vérification d'email :", error);
     res.status(400).json({ message: "Lien invalide ou expiré." });
@@ -103,11 +119,9 @@ export const login = async (req, res) => {
       return res.status(401).json({ message: "Mot de passe incorrect." });
     }
 
-    const token = jwt.sign(
-      { userId: user.id, role: user.role },
-      JWT_SECRET,
-      { expiresIn: '7d' }
-    );
+    const token = jwt.sign({ userId: user.id, role: user.role }, JWT_SECRET, {
+      expiresIn: "7d",
+    });
 
     res.status(200).json({
       message: "Connexion réussie.",
@@ -116,11 +130,16 @@ export const login = async (req, res) => {
         id: user.id,
         name: user.name,
         email: user.email,
-        role: user.role
-      }
+        role: user.role,
+      },
     });
   } catch (error) {
     console.error("Erreur lors de la connexion :", error);
     res.status(500).json({ message: "Erreur lors de la connexion." });
   }
+};
+
+// Déconnexion (optionnelle, peut être gérée côté client)
+export const logout = (req, res) => {
+  res.json({ message: "Déconnexion réussie." });
 };

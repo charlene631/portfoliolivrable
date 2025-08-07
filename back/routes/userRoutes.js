@@ -3,14 +3,16 @@ import {
   getAllUsersController,
   getUserByIdController,
   updateUser,
-  deleteUser
+  deleteUser, protectedExample
 } from '../controllers/userController.js';
 
-import { verifyToken, hasRole } from '../middlewares/authMiddleware.js';
+import { verifyToken, hasRole} from '../middlewares/authMiddleware.js';
 
 const router = express.Router();
 
 router.use(verifyToken); // toutes les routes demandent d'être connecté
+router.get('/protected-example', verifyToken, protectedExample);
+
 
 router.get('/', hasRole('admin'), getAllUsersController); // liste tous les utilisateurs
 router.get('/:id', hasRole('admin'), getUserByIdController);
