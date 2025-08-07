@@ -5,11 +5,14 @@ import userRoutes from './routes/userRoutes.js';
 import categoryRouter from './routes/categoryRoutes.js';
 import documentsRouter from './routes/documentsRoutes.js';
 import dotenv from 'dotenv';
+import cors from 'cors';
+
 dotenv.config();
 
 const app = express();
 const port = 3000;
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/', async (req, res) => {

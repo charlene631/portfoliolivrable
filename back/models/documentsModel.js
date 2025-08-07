@@ -11,7 +11,7 @@ export const createDocument = (title, description, format, auteur_id, categorie_
 // Récupérer tous les documents
 export const getAllDocuments = () => {
   return pool.query(
-    `SELECT documents.*, categories.nom AS categorie 
+    `SELECT documents.*, categories.name AS categorie 
      FROM documents
      LEFT JOIN categories ON documents.categorie_id = categories.id`
   );
