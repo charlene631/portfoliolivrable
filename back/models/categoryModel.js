@@ -10,6 +10,7 @@ const categoryModel = {
             return response
         }
         catch (error) {
+            console.error("Erreur dans getAll:", error);
             throw new Error("Erreur model getAll", error)
         }
 

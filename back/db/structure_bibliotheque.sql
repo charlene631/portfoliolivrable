@@ -34,7 +34,7 @@ VALUES
 
 
 CREATE TABLE `documents` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `id` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text,
   `format` varchar(255),
@@ -122,4 +122,17 @@ INSERT INTO documents (
  '2025-07-01 09:00:00',
  '2025-07-15 11:27:00')
  ;
+
+ALTER TABLE `documents`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `auteur_id` (`auteur_id`),
+  ADD KEY `categorie_id` (`categorie_id`);
+
+  ALTER TABLE `documents`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+  ALTER TABLE `documents`
+  ADD CONSTRAINT `documents_ibfk_1` FOREIGN KEY (`auteur_id`) REFERENCES `utilisateurs` (`id`),
+  ADD CONSTRAINT `documents_ibfk_2` FOREIGN KEY (`categorie_id`) REFERENCES `categories` (`id`);
+COMMIT;
 
