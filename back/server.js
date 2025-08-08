@@ -12,6 +12,7 @@ dotenv.config();
 
 const app = express();
 
+// Utilise le port fourni par Render OU 3000 en local
 const port = process.env.PORT || 3000;
 
 app.use(cors({
@@ -22,7 +23,7 @@ app.use(cors({
 
 app.use(express.json());
 
-
+// Test route (retourne les tables MySQL)
 app.get('/', async (req, res) => {
   try {
     const [rows] = await pool.query("SHOW TABLES");
@@ -32,7 +33,7 @@ app.get('/', async (req, res) => {
   }
 });
 
-
+// Routes API
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/categories', categoryRouter);
