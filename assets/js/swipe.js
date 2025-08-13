@@ -1,33 +1,37 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("swiperProjectContainer");
   console.log(container);
-  
 
-   if (!container) {
+  if (!container) {
     console.error("Le conteneur swiperProjectContainer est introuvable !");
     return;
   }
 
-  const slidesData = [ // variable de tableau d'objets des projets de développement web et web mobile pour la création du carousel
-    {
-      titre: "Site de rencontre + 50 ans - Version 0",
-      description: "Un site dynamique en HTML/CSS/Javascript en cours de développement. Projet fil rouge de la formation DWWM (Développeur Web et Web Mobile) de l'AFEC.",
-      image: "assets/image/accueil.png",
-      lien:"https://charlene149611.github.io/site-de-rencontre/"
-    },
+  const slidesData = [
+    // variable de tableau d'objets des projets de développement web et web mobile pour la création du carousel
+
     {
       titre: " HACKATON régional août 2025- AccessiWeb - version 0",
-      description: "AccessiWeb est une plateforme web permettant de consulter et gérer une bibliothèque de documents et de catégories, avec un système d'authentification sécurisé et gestion des rôles (`admin` et `user`). Elle permet aux utilisateurs de parcourir et rechercher des documents, aux administrateurs de gérer les utilisateurs, catégories et documents, le téléversement de fichiers (Cloudinary), la vérification d'email lors de l'inscription. Projet déployé en backend sur Render et frontend sur Versel",
+      description:
+        "AccessiWeb est une plateforme web permettant de consulter et gérer une bibliothèque de documents et de catégories, avec un système d'authentification sécurisé et gestion des rôles (`admin` et `user`). Elle permet aux utilisateurs de parcourir et rechercher des documents, aux administrateurs de gérer les utilisateurs, catégories et documents, le téléversement de fichiers (Cloudinary), la vérification d'email lors de l'inscription. Projet déployé en backend sur Render et frontend sur Versel",
       image: "assets/image/hackaton.png",
-      lien: "file:///C:/Users/cgaus/Downloads/Hackathon%20-%20Restitution%20VF.pdf"
+      lien: "file:///C:/Users/cgaus/Downloads/Hackathon%20-%20Restitution%20VF.pdf",
     },
     {
-      titre: "Portfolio - Version 0, qui est la première version de mon portfolio",
-      description: "Un site statique incluant des animations et du dynamisme en HTML/CSS/Javascript et du JSON. Le projet utilise également des bibliothèques externes telles que Bootstrap et Swipe.",
+      titre: "Site de rencontre + 50 ans - Version 0",
+      description:
+        "Un site dynamique en HTML/CSS/Javascript en cours de développement. Projet fil rouge de la formation DWWM (Développeur Web et Web Mobile) de l'AFEC.",
+      image: "assets/image/accueil.png",
+      lien: "https://charlene149611.github.io/site-de-rencontre/",
+    },
+    {
+      titre:
+        "Portfolio - Version 0, qui est la première version de mon portfolio",
+      description:
+        "Un site statique incluant des animations et du dynamisme en HTML/CSS/Javascript et du JSON. Le projet utilise également des bibliothèques externes telles que Bootstrap et Swipe.",
       image: "assets/image/portfolio.png",
-      lien:"https://charlene149611.github.io/portfoliov2/"     
-    }
+      lien: "https://charlene149611.github.io/portfoliov2/",
+    },
   ];
 
   // Injection HTML Swiper pour créer un carousel
@@ -42,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const slidesWrapper = document.getElementById("projectSlides");
 
-  slidesData.forEach(slide => {
+  slidesData.forEach((slide) => {
     console.log("Chargement image :", slide.image);
 
     const slideElement = document.createElement("div"); // Création du carousel et importation des données de la variable
@@ -66,16 +70,15 @@ document.addEventListener("DOMContentLoaded", () => {
     loop: true,
     pagination: {
       el: ".swiper-pagination",
-      clickable: true
+      clickable: true,
     },
     navigation: {
       nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
+      prevEl: ".swiper-button-prev",
     },
     autoplay: {
-      delay: 6000
-    }
+      delay: 6000,
+    },
   });
   console.log("Swiper initialisé !");
-
 });
