@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lien:"https://charlene149611.github.io/site-de-rencontre/"
     },
     {
-      titre: " HACKATON régional- AccessiWeb - version 0",
+      titre: " HACKATON régional août 2025- AccessiWeb - version 0",
       description: "AccessiWeb est une plateforme web permettant de consulter et gérer une bibliothèque de documents et de catégories, avec un système d'authentification sécurisé et gestion des rôles (`admin` et `user`). Elle permet aux utilisateurs de parcourir et rechercher des documents, aux administrateurs de gérer les utilisateurs, catégories et documents, le téléversement de fichiers (Cloudinary), la vérification d'email lors de l'inscription. Projet déployé en backend sur Render et frontend sur Versel",
       image: "assets/image/hackaton.png",
       lien: "file:///C:/Users/cgaus/Downloads/Hackathon%20-%20Restitution%20VF.pdf"
