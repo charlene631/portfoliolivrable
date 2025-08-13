@@ -2,10 +2,7 @@ import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 dotenv.config();
 
-// tester si je récupère mes variables
-
-console.log(process.env.GMAIL_USER);
-console.log(process.env.GMAIL_APP_PASSWORD);
+// Configuration du transporteur Nodemailer
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
