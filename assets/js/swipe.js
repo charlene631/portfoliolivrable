@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "AccessiWeb est une plateforme web permettant de consulter et gérer une bibliothèque de documents et de catégories, avec un système d'authentification sécurisé et gestion des rôles (`admin` et `user`). Elle permet aux utilisateurs de parcourir et rechercher des documents, aux administrateurs de gérer les utilisateurs, catégories et documents, le téléversement de fichiers (Cloudinary), la vérification d'email lors de l'inscription. Projet déployé en backend sur Render et frontend sur Versel",
       image: "assets/image/hackaton.png",
-      lien: "file:///C:/Users/cgaus/Downloads/Hackathon%20-%20Restitution%20VF.pdf",
+      lien: "https://accessitheque-alf3.onrender.com",
     },
     {
       titre: "Site de rencontre + 50 ans - Version 0",
