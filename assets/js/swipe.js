@@ -11,19 +11,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const slidesData = [ // variable de tableau d'objets des projets de développement web et web mobile pour la création du carousel
     {
-      titre: "Projet Site de rencontre",
+      titre: "Site de rencontre + 50 ans - Version 0",
       description: "Un site dynamique en HTML/CSS/Javascript en cours de développement. Projet fil rouge de la formation DWWM (Développeur Web et Web Mobile) de l'AFEC.",
       image: "assets/image/accueil.png",
       lien:"https://charlene149611.github.io/site-de-rencontre/"
     },
     {
-      titre: "Premier projet React",
-      description: "Un petit projet interactif de mini jeu utilisant React et Vite",
-      image: "assets/image/premierprojetreact.png",
-      lien: "https://charlene149611.github.io/mini-jeu/"
+      titre: " HACKATON régional- AccessiWeb - version 0",
+      description: "AccessiWeb est une plateforme web permettant de consulter et gérer une bibliothèque de documents et de catégories, avec un système d'authentification sécurisé et gestion des rôles (`admin` et `user`). Elle permet aux utilisateurs de parcourir et rechercher des documents, aux administrateurs de gérer les utilisateurs, catégories et documents, le téléversement de fichiers (Cloudinary), la vérification d'email lors de l'inscription. Projet déployé en backend sur Render et frontend sur Versel",
+      image: "assets/image/hackaton.png",
+      lien: "file:///C:/Users/cgaus/Downloads/Hackathon%20-%20Restitution%20VF.pdf"
     },
     {
-      titre: "Portfolio - Version 2, qui est la première version de mon portfolio",
+      titre: "Portfolio - Version 0, qui est la première version de mon portfolio",
       description: "Un site statique incluant des animations et du dynamisme en HTML/CSS/Javascript et du JSON. Le projet utilise également des bibliothèques externes telles que Bootstrap et Swipe.",
       image: "assets/image/portfolio.png",
       lien:"https://charlene149611.github.io/portfoliov2/"     

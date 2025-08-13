@@ -7,7 +7,7 @@
       "ville": "Saint-Martin-de-Seignanx"
     },
     "interets": ["Salsa", "Marche", "Musique", "Lecture", "Sciences Fictions", "Calligraphie"],
-    "competences": ["WordPress", "UX Design", "HTML", "CSS", "JavaScript", "React", "Node.js", "Express","MySql", "MongoDb"],
+    "competences": ["WordPress", "UX Design", "HTML", "CSS", "JavaScript","Node.js", "React", "Express","MySql", "MongoDb"],
     "parcours": [
       {
         "poste":"Chargée de communication numérique et marketing",
