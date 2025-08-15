@@ -1,45 +1,62 @@
-import { useEffect, useState } from "react"
-import FilterCategory from "../components/FilterCategory"
-import Footer from "../components/Footer"
-import Header from "../components/Header"
-import Main from "../components/Main"
+import { useEffect, useState } from "react";
+import FilterCategory from "../components/FilterCategory";
+import Main from "../components/Main";
 
-const Home = () => {
-    const [documents, setDocuments] = useState([])
-    const [filterDocument, setFilterDocument] = useState([])
-    const [category, setCategory] = useState("")
-    const [filter, setFilter] = useState(false)
+const Home = ({ filter, setFilter }) => {
+  const [documents, setDocuments] = useState([]);
+  const [filterDocument, setFilterDocument] = useState([]);
+  const [category, setCategory] = useState([]);
+  const [error, setError] = useState(""); // nouvel état pour l’erreur
 
-    useEffect(() => {
-        fetch("http://localhost:3000/documents")
-            .then((r) => {
-                if (r.ok) {
-                    return r.json()
-                }
-            })
-            .then((data) => {
-                setDocuments(data)
-            })
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
+  useEffect(() => {
+    // Récupération des documents
+    fetch(`${API_URL}/documents`)
+      .then((r) => {
+        if (!r.ok) throw new Error(`Erreur HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((data) => setDocuments(data))
+      .catch(() => setError("Impossible de récupérer les documents."));
 
-        fetch("http://localhost:3000/categories/getAll")
-            .then((r) => {
-                if (r.ok) {
-                    return r.json()
-                }
-            })
-            .then((data) => {
-                setCategory(data)
-            })
-    }, [])
+    // Récupération des catégories
+    fetch(`${API_URL}/categories/getAll`)
+      .then((r) => {
+        if (!r.ok) throw new Error(`Erreur HTTP ${r.status}`);
+        return r.json();
+      })
+      .then((data) => setCategory(data))
+      .catch(() => setError("Impossible de récupérer les catégories."));
+  }, [API_URL]);
 
-    return (
+  return (
+    <div>
+      {/* Affichage d’un message d’erreur si besoin */}
+      {error && (
+        <div className="alert alert-warning text-center" role="alert">
+          {error}
+        </div>
+      )}
+
+      {/* Affichage “Chargement…” si documents ou categories non chargés et pas d’erreur */}
+      {!error && (documents.length === 0 || category.length === 0) && (
+        <div className="text-center my-3">Chargement...</div>
+      )}
+
+      {/* Affichage principal quand les données sont prêtes */}
+      {documents.length > 0 && category.length > 0 && (
         <>
-            <Header filter={setFilter}  />
-            <FilterCategory categories={category} filter={setFilterDocument} activeFilter={setFilter} />
-            <Main  data={filter? filterDocument :documents}  />
-            <Footer />
+          <FilterCategory
+            categories={category}
+            filter={setFilterDocument}
+            activeFilter={setFilter}
+          />
+          <Main data={filter ? filterDocument : documents} />
         </>
-    )
-}
-export default Home
+      )}
+    </div>
+  );
+};
+
+export default Home;

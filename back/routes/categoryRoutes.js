@@ -3,6 +3,10 @@ import categoryController from '../controllers/categoryController.js';
 
 const categoryRouter = Router()
 
+// http://localhost:3000/categories/document?id=1
+categoryRouter.get('/document', categoryController.getDocumentsByCategory);
+
+
 // lister toutes les catégories
 // http://localhost:3000/categories/getAll
 categoryRouter.get('/getAll', categoryController.getAll);

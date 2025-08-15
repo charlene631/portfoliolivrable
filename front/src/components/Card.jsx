@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Card = ({ image, title, description, category }) => {
     return (
         <div className="card" style={{ width: "18rem" }}>
-            <p style={{display: "flex",justifyContent:"center", backgroundColor:"red", width:"auto"}}>{category}</p>
+            <p style={{display: "flex",justifyContent:"center", backgroundColor:"#DFF0D8", width:"auto"}}>{category}</p>
             <div
                 style={{
                     height: "150px",
@@ -22,7 +22,7 @@ const Card = ({ image, title, description, category }) => {
                
             </div>
             
-            <Link to={'/document'}> <p style={{width:"100%"}}  className="btn btn-primary">En savoir plus</p></Link>
+            <Link to={'/document'}> <p style={{width:"100%", color:"#DFF0D8", backgroundColor:"#3B384D"}}  className="button">En savoir plus</p></Link>
         </div>
     );
 };

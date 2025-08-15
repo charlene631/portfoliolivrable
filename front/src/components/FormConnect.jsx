@@ -13,10 +13,10 @@ const FormConnect = () => {
             aria-labelledby="formConnectTitle"
             role="form"
         >
-            <h2 style={{textAlign:"center"}} id="formConnectTitle" className="mb-4">Connectez Vous</h2>
+            <h2 style={{textAlign:"center"}} id="formConnectTitle" className="mb-4">Connectez - vous</h2>
 
             <div className="mb-3">
-                <label htmlFor="email" className="form-label">Email address</label>
+                <label htmlFor="email" className="form-label">Email</label>
                 <input
                     type="email"
                     id="email"
@@ -30,7 +30,7 @@ const FormConnect = () => {
             </div>
 
             <div className="mb-3">
-                <label htmlFor="password" className="form-label">Password</label>
+                <label htmlFor="password" className="form-label">Mot de passe</label>
                 <input
                     type="password"
                     id="password"
@@ -52,17 +52,17 @@ const FormConnect = () => {
                     aria-label="Remember me"
                 />
                 <label htmlFor="rememberMe" className="form-check-label">
-                    Remember me
+                    Se souvenir de moi
                 </label>
             </div>
 
             <div className="d-flex justify-content-center mb-3">
                 <button
                     type="submit"
-                    className="btn btn-primary"
+                    className="button"
                     aria-label="Submit login form"
                 >
-                    Submit
+                    Envoyer
                 </button>
             </div>
 

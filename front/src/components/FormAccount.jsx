@@ -14,7 +14,7 @@ const FormAccount = () => {
             <h2 style={{textAlign:"center"}} id="accountFormTitle" className="mb-4">Créer son Compte</h2>
 
             <div className="mb-3">
-                <label htmlFor="firstName" className="form-label">First Name</label>
+                <label htmlFor="firstName" className="form-label">Prénom</label>
                 <input
                     type="text"
                     id="firstName"
@@ -28,7 +28,7 @@ const FormAccount = () => {
             </div>
 
             <div className="mb-3">
-                <label htmlFor="lastName" className="form-label">Last Name</label>
+                <label htmlFor="lastName" className="form-label">Nom</label>
                 <input
                     type="text"
                     id="lastName"
@@ -42,7 +42,7 @@ const FormAccount = () => {
             </div>
 
             <div className="mb-3">
-                <label htmlFor="email" className="form-label">Email address</label>
+                <label htmlFor="email" className="form-label">Email</label>
                 <input
                     type="email"
                     id="email"
@@ -56,7 +56,7 @@ const FormAccount = () => {
             </div>
 
             <div className="mb-3">
-                <label htmlFor="password" className="form-label">Password</label>
+                <label htmlFor="password" className="form-label">Mot de passe</label>
                 <input
                     type="password"
                     id="password"
@@ -72,10 +72,10 @@ const FormAccount = () => {
             <div className="d-flex justify-content-center">
                 <button
                     type="submit"
-                    className="btn btn-primary"
+                    className="button"
                     aria-label="Submit the account creation form"
                 >
-                    Submit
+                    Envoyer
                 </button>
             </div>
         </form>

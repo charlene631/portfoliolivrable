@@ -1,4 +1,4 @@
-# Accessithèque
+# accessiWeb
 
 ## Présentation du projet
 Accessithèque est une plateforme web permettant de consulter et gérer une bibliothèque de documents et de catégories, avec un système d’authentification sécurisé et gestion des rôles (`admin` et `user`).  

@@ -1,20 +1,19 @@
-const filterCategory = ({ categories, filter, activeFilter }) => {
-    const all =()=>{
-activeFilter(false)
-    }
-    const filterCat = (e) => {
-        fetch(`http://localhost:3000/categories/document?id=${e.target.id}`)
-            .then((r) => {
-                if (r.ok) {
-                    return r.json()
-                }
-            })
-            .then((data) => {
-                filter(data)
-            })
+const FilterCategory = ({ categories, filter, activeFilter }) => {
+    const API_URL = import.meta.env.VITE_API_URL;
 
-        activeFilter(true)
-    }
+    const all = () => {
+        activeFilter(false);
+    };
+
+    const filterCat = (e) => {
+        fetch(`${API_URL}/categories/document?id=${e.target.id}`)
+            .then((r) => r.ok ? r.json() : null)
+            .then((data) => { if (data) filter(data); })
+            .catch(err => console.error("Erreur fetch catégorie :", err));
+
+        activeFilter(true);
+    };
+
     return (
         <div
             style={{
@@ -23,30 +22,34 @@ activeFilter(false)
                 justifyContent: "space-around",
                 border: "1px solid black",
                 padding: "15px",
-                backgroundColor: "white"
-            }}>
+                color: "#DFF0D8",
+                backgroundColor: "#3B384D"
+            }}
+        >
             <div
-            onClick={all}
+                onClick={all}
                 style={{
-                    border: "1px solid black",
+                    border: "1px solid #DFF0D8",
                     padding: "5px"
                 }}
-            >ALL
+            >
+                ALL
             </div>
-            {categories && categories.map((d, i) => {
-                return (
-                    <div
-                        id={d.id}
-                        key={i}
-                        onClick={filterCat}
-                        style={{
-                            border: "1px solid black",
-                            padding: "5px"
-                        }}
-                    >{d.name}
-                    </div>)
-            })}
+            {categories && categories.map((d, i) => (
+                <div
+                    id={d.id}
+                    key={i}
+                    onClick={filterCat}
+                    style={{
+                        border: "1px solid #DFF0D8",
+                        padding: "5px"
+                    }}
+                >
+                    {d.name}
+                </div>
+            ))}
         </div>
-    )
-}
-export default filterCategory
+    );
+};
+
+export default FilterCategory;
