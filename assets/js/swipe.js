@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     {
       titre: "accessiWeb - Web app accessible de gestion de documents - Version 0",
-      description: "accessiWeb est une web app accessible, en cours de développement, pour gérer des documents, avec un frontend React/Bootstrap déployé sur Vercel et un backend Node.js/Express sur Render utilisant une base MySQL/MongoDB et Cloudinary pour les fichiers. L'application propose l'affichage dynamique des documents et catégories, un filtrage interactif, une gestion des utilisateurs avec authentification, ainsi que des messages d'erreur et indicateurs de chargement pour une expérience utilisateur claire.",
+      description: "accessiWeb est une web app accessible, en cours de développement, pour gérer des documents, avec un frontend React/Bootstrap déployé sur Vercel et un backend Node.js/Express sur Render utilisant une base MySQL et Cloudinary pour les fichiers. L'application propose l'affichage dynamique des documents et catégories, un filtrage interactif, une gestion des utilisateurs avec authentification, ainsi que des messages d'erreur et indicateurs de chargement pour une expérience utilisateur claire.",
       image: "assets/image/accessiweb.png",
       lien: "https://accessi-web.vercel.app",
     },
