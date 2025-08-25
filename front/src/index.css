@@ -1,0 +1,43 @@
+#root {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #3B384D;
+  color: #DFF0D8;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  width: 100%;
+  color: #DFF0D8;
+  background-color: #3B384D;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.visually-hidden-focusable {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+.visually-hidden-focusable:focus,
+.visually-hidden-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+  overflow: visible;
+}
+
