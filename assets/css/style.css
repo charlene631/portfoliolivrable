@@ -33,7 +33,7 @@ ul {
 
 button {
   cursor: pointer;
-  border: none;
+  border: 2px solid #EAD9F7;
   background: linear-gradient(135deg, #8c6ed5, #b585f0);
   color: #ffffff;
 }
