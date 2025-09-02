@@ -35,12 +35,12 @@ ul {
 button {
   cursor: pointer;
   border: none;
-  background-color: #18396a;
-  color: white;
+  background-color: #ee83b4;
+  color: black;
 }
 
 button:hover {
-  background-color: #ffd5ee;
+  background-color: #ee83b4;
   color: black;
 }
 
@@ -56,33 +56,9 @@ button:hover {
 }
 
 .buttonProfile {
-  width: 100px;
-  height: 100px;
-  color: #18396a;
-  font-style: bold;
-  background-color: #18396a;
+ 
   background-image: url('https://charlene149611.github.io/PORTFOLIOLIVRABLE/assets/image/diamantcristal.png');
-  background-size: cover;
-  background-position: center;
-  border: none;
-  cursor: pointer;
-  transform: rotate(45deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.buttonProfile span {
-  transform: rotate(-45deg);
-  display: inline-block;
-}
-
-.buttonProfile.active {
-  transform: rotate(225deg);
-}
-
-.buttonProfile.active span {
-  transform: rotate(-225deg);
+  
 }
 
 .themeToggle {
@@ -239,7 +215,7 @@ main {
 
 /* Sections */
 section {
-  background-color: #ffd5ee;
+  background-color: white;
   border: 1px solid #ddd;
   border-radius: 0;
   padding: 20px;
@@ -250,6 +226,9 @@ section {
   text-align: center;
 }
 
+section:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
 
 section#parcours p {
   text-align: center;

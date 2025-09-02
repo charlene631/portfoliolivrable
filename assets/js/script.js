@@ -42,8 +42,8 @@ document.getElementById("contactLink")?.addEventListener("click", (e) => {
 });
 
 // Toggle profil
-const openSound = new Audio("assets/sound/Pokemon out.mp3");
-const closeSound = new Audio("assets/sound/Pokemon return.mp3");
+//const openSound = new Audio("assets/sound/Pokemon out.mp3");
+//const closeSound = new Audio("assets/sound/Pokemon return.mp3");
 
 const buttonProfile = document.getElementById("showProfile");
 const sectionProfile = document.getElementById("profilSection");
@@ -52,7 +52,7 @@ let isProfileVisible = false;
 buttonProfile?.addEventListener("click", () => {
   if (!isProfileVisible) {
     sectionProfile.style.display = "block";
-    buttonProfile.innerHTML = "<span>Masquer mon profil</span>";
+    buttonProfile.innerHTML = "Masquer mon profil";
     buttonProfile.classList.add("active");
     isProfileVisible = true;
 
@@ -144,7 +144,7 @@ buttonProfile?.addEventListener("click", () => {
     sectionProfile.innerHTML = "";
     sectionProfile.style.display = "none";
     isProfileVisible = false;
-    buttonProfile.innerHTML = "<span>Voir mon profil</span>";
+    buttonProfile.innerHTML = "Voir mon profil";
     buttonProfile.classList.remove("active");
   }
 });
