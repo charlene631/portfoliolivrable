@@ -39,7 +39,7 @@ button {
 }
 
 button:hover {
-  background-color: #8FA7C8;
+  background-color: #8fa7c8;
   color: #5b3e99;
 }
 
@@ -155,8 +155,8 @@ header h1 {
 
 .nav-menu a {
   display: inline-block;
-  background-color: #18396a;
-  color: white;
+  background: linear-gradient(135deg, #8c6ed5, #b585f0);
+  color: #ffffff;
   padding: 10px 16px;
   border-radius: 25px;
   text-decoration: none;
