@@ -56,7 +56,7 @@ buttonProfile?.addEventListener("click", () => {
     buttonProfile.classList.add("active");
     isProfileVisible = true;
 
-    openSound.play(); // 🔊 Son à l'ouverture
+    //openSound.play(); // Son à l'ouverture
 
     fetch("data.json")
       .then((response) => {
@@ -123,7 +123,7 @@ buttonProfile?.addEventListener("click", () => {
             const cardContainer = document.querySelector(".card-container");
             cardContainer.classList.add("ranged");
 
-            closeSound.play(); // 🔇 Son à la fermeture
+            // closeSound.play(); // Son à la fermeture
 
             setTimeout(() => {
               sectionProfile.innerHTML = "";
@@ -140,7 +140,7 @@ buttonProfile?.addEventListener("click", () => {
           "<p>Impossible de charger le profil pour le moment.</p>";
       });
   } else {
-    closeSound.play(); // 🔇 Son à la fermeture
+    // closeSound.play(); // Son à la fermeture
     sectionProfile.innerHTML = "";
     sectionProfile.style.display = "none";
     isProfileVisible = false;
