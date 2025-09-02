@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("swiperProjectContainer");
-  console.log(container);
+  
 
   if (!container) {
     console.error("Le conteneur swiperProjectContainer est introuvable !");
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const slidesWrapper = document.getElementById("projectSlides");
 
   slidesData.forEach((slide) => {
-    console.log("Chargement image :", slide.image);
+    
 
     const slideElement = document.createElement("div"); // Création du carousel et importation des données de la variable
     slideElement.className = "swiper-slide";
@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     slidesWrapper.appendChild(slideElement);
   });
-  console.log("Slides ajoutés :", slidesWrapper.innerHTML);
 
   // Initialisation Swiper, du carousel avec dynamisme des slides
   new Swiper(".mySwiper", {
@@ -72,5 +71,4 @@ document.addEventListener("DOMContentLoaded", () => {
       delay: 6000,
     },
   });
-  console.log("Swiper initialisé !");
 });
