@@ -226,19 +226,20 @@ header h1 {
 }
 
 #profilSection {
-  padding: 20px;  
+  padding: 20px;
+  background-color: #ffd5ee;  
 }
 
 /* Section principale */
 main {
   grid-area: main;
-  background-color: white;
+  background-color: #ffd5ee;
   padding: 20px;
 }
 
 /* Sections */
 section {
-  background-color: white;
+  background-color: #ffd5ee;
   border: 1px solid #ddd;
   border-radius: 0;
   padding: 20px;
