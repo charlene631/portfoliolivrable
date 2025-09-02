@@ -306,7 +306,7 @@ main { grid-area: main; }
 }
 
 /* ===============================
-   CARDS / FLIP MODERNE
+   CARDS / FLIP MODERNE ANIMÉE
 ================================= */
 
 .card-container {
@@ -338,13 +338,14 @@ main { grid-area: main; }
   left: 0;
   backface-visibility: hidden;
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1.2rem;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* FRONT */
@@ -353,9 +354,9 @@ main { grid-area: main; }
   color: #fff;
   text-align: center;
   position: relative;
-  overflow: hidden;
 }
 
+/* FRONT - animation lumière subtile et moderne */
 .card-face.front::before {
   content: "";
   position: absolute;
@@ -363,8 +364,25 @@ main { grid-area: main; }
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2), transparent 70%);
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.2) 0%,
+    rgba(255,255,255,0.05) 50%,
+    rgba(255,255,255,0.2) 100%
+  );
   transform: rotate(25deg);
+  filter: blur(15px);
+  animation: lightSweep 3s linear infinite;
+}
+
+/* Keyframes pour l'animation lumière subtile */
+@keyframes lightSweep {
+  0% {
+    transform: rotate(25deg) translateX(-100%);
+  }
+  100% {
+    transform: rotate(25deg) translateX(100%);
+  }
 }
 
 /* Name + Type Badge */
@@ -384,7 +402,7 @@ main { grid-area: main; }
   font-size: 0.9rem;
 }
 
-/* Skills badges */
+/* Skills badges with pulse animation */
 .skill-badge {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
@@ -393,6 +411,12 @@ main { grid-area: main; }
   border-radius: 999px;
   margin: 0.25rem;
   font-size: 0.85rem;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.85; }
 }
 
 /* BACK */
@@ -414,6 +438,7 @@ main { grid-area: main; }
   border-radius: 999px;
   margin: 0.25rem;
   font-size: 0.85rem;
+  animation: pulse 2s infinite ease-in-out;
 }
 
 /* Return button */
@@ -432,7 +457,6 @@ main { grid-area: main; }
 .return-btn:hover {
   transform: translateY(-2px);
 }
-
 
 /* ===============================
    FORMULAIRES
