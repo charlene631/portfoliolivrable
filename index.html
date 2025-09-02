@@ -1,168 +1,847 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Charlène | Pokédex</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="assets/image/faviconportfolio.webp"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Charlène - Développeuse web full stack passionnée par le backend, l'IA et le design">
+    <meta name="author" content="Charlène Gausset">
+    <meta name="keywords" content="développeuse web, full stack, backend, IA, design, portfolio, JavaScript, React, Node.js">
+    
+    <!-- Open Graph pour les réseaux sociaux -->
+    <meta property="og:title" content="Portfolio - Charlène | Développeuse Web Full Stack">
+    <meta property="og:description" content="Développeuse web full stack passionnée par le backend, l'IA et le design">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Portfolio - Charlène | Développeuse Web Full Stack">
+    <meta name="twitter:description" content="Développeuse web full stack passionnée par le backend, l'IA et le design">
+    
+    <title>Portfolio - Charlène | Développeuse Web Full Stack</title>
+    
+    <!-- Préchargement des ressources critiques -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha384-DG8aPQCOJXfCwrYNgfgJiJOUIGZw7FI3V5mJCL1gZg6uHHw3EjDgvKY7GGSl9FD6" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Favicons améliorés -->
+    <link rel="icon" type="image/webp" sizes="16x16" href="assets/image/faviconportfolio.webp">
+    <link rel="icon" type="image/webp" sizes="32x32" href="assets/image/faviconportfolio.webp">
+    <link rel="apple-touch-icon" href="assets/image/faviconportfolio.webp">
+    <link rel="shortcut icon" href="assets/image/faviconportfolio.webp" type="image/x-icon">
+    
+    <!-- Schema.org pour le SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Charlène Gausset",
+        "jobTitle": "Développeuse Web Full Stack",
+        "description": "Développeuse web full stack passionnée par le backend, l'IA et le design",
+        "url": "https://votre-domaine.com",
+        "sameAs": [
+            "https://github.com/charlene631",
+            "https://www.linkedin.com/in/charlène-gausset-113380b5/"
+        ],
+        "knowsAbout": ["JavaScript", "React", "Node.js", "HTML", "CSS", "Backend Development", "AI", "UX Design"],
+        "alumniOf": "Formation Marketing Digital"
+    }
+    </script>
+</head>
 
-  <body>
-    <div class="grid-container">
-      <!-- Header -->
-      <header class="header">
-        <img
-          src="https://media.tenor.com/8PlnT9rtCScAAAAj/mew-pokemon.gif"
-          alt="mew qui se déplace"
-          class="imgHeader"
-          id="mewImage"
-        />
-        <h1>Bienvenue sur mon portfolio</h1>
-        <nav id="menu">
-          <ul class="nav-menu">
-            <li><a href="#profilSection" id="profilLink">Profil</a></li>
-            <li><a href="#parcours" id="parcoursLink">Parcours</a></li>
-            <li><a href="#projets" id="projetsLink">Projets</a></li>
-            <li><a href="#contact" id="contactLink">Contact</a></li>
-          </ul>
-          <button
-            class="themeToggle"
-            id="darkToggle"
-            aria-label="Changer le thème"
-          >
-            🌓
-          </button>
-        </nav>
-      </header>
-    </div>
+<body>
+    <!-- Skip link pour l'accessibilité -->
+    <a href="#main-content" class="visually-hidden-focusable btn btn-primary">
+        Aller au contenu principal
+    </a>
+    
+    <!-- Container principal avec grid amélioré -->
+    <div class="portfolio-container">
+        
+        <!-- En-tête principal fixe -->
+        <header class="main-header" role="banner" id="mainHeader">
+            <div class="header-content container-fluid">
+                <div class="logo-section">
+                    <img src="https://media.tenor.com/8PlnT9rtCScAAAAj/mew-pokemon.gif" 
+                         alt="Mew Pokémon - Mascotte du portfolio" 
+                         class="logo-image" 
+                         id="mewImage"
+                         loading="lazy"
+                         width="50"
+                         height="50">
+                    
+                    <div class="brand-info">
+                        <h1 class="brand-title">Charlène Gausset</h1>
+                        <p class="brand-subtitle">Développeuse Full Stack</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation principale responsive -->
+                <nav class="main-navigation" role="navigation" aria-label="Navigation principale">
+                    <!-- Bouton menu mobile -->
+                    <button class="mobile-menu-toggle d-lg-none" 
+                            type="button"
+                            id="mobileMenuToggle"
+                            aria-controls="mainNavMenu"
+                            aria-expanded="false"
+                            aria-label="Ouvrir le menu de navigation">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                    
+                    <!-- Menu de navigation -->
+                    <ul class="nav-menu" id="mainNavMenu" role="menubar">
+                        <li class="nav-item" role="none">
+                            <a href="#hero-section" 
+                               class="nav-link" 
+                               role="menuitem"
+                               data-section="hero">
+                                <span class="nav-icon">🏠</span>
+                                <span class="nav-text">Accueil</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="#profil-section" 
+                               class="nav-link" 
+                               role="menuitem"
+                               data-section="profil">
+                                <span class="nav-icon">👤</span>
+                                <span class="nav-text">Profil</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="#parcours-section" 
+                               class="nav-link" 
+                               role="menuitem"
+                               data-section="parcours">
+                                <span class="nav-icon">🎯</span>
+                                <span class="nav-text">Parcours</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="#projets-section" 
+                               class="nav-link" 
+                               role="menuitem"
+                               data-section="projets">
+                                <span class="nav-icon">💻</span>
+                                <span class="nav-text">Projets</span>
+                            </a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="#contact-section" 
+                               class="nav-link" 
+                               role="menuitem"
+                               data-section="contact">
+                                <span class="nav-icon">📧</span>
+                                <span class="nav-text">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Contrôles additionnels -->
+                    <div class="nav-controls">
+                        <button class="theme-toggle" 
+                                id="themeToggle" 
+                                type="button"
+                                aria-label="Basculer entre le thème clair et sombre"
+                                aria-pressed="false"
+                                title="Changer le thème">
+                            <span class="theme-icon-light">☀️</span>
+                            <span class="theme-icon-dark">🌙</span>
+                        </button>
+                        
+                        <button class="language-toggle" 
+                                id="languageToggle" 
+                                type="button"
+                                aria-label="Changer la langue"
+                                title="Changer la langue">
+                            🇫🇷
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </header>
 
-    <!-- Aside -->
-    <aside id="profilAside" aria-live="polite">
-      <h2>Profil</h2>
-      <p>
-        Bonjour ! Charlène, 36 ans, je suis en reconversion pour travailler dans
-        le milieu du développement web. Suite à une formation de marketing
-        digital, j'ai des connaissances en UX design, création de site WordPress
-        et référencement naturel. Je suis développeuse web full stack passionnée
-        par le backend, l'IA, le design et fan de sciences fictions.
-      </p>
+        <!-- Section Hero -->
+        <section id="hero-section" class="hero-section" role="banner">
+            <div class="hero-content container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="hero-text">
+                            <span class="hero-greeting">Bonjour, je suis</span>
+                            <h1 class="hero-title">
+                                <span class="title-highlight">Charlène</span>
+                                <span class="title-subtitle">Développeuse Web Full Stack</span>
+                            </h1>
+                            <p class="hero-description">
+                                Passionnée par le <strong>backend</strong>, l'<strong>IA</strong> et le <strong>design</strong>. 
+                                En reconversion professionnelle avec une expertise en marketing digital et UX design.
+                                Fan de sciences fiction et toujours prête à relever de nouveaux défis techniques.
+                            </p>
+                            
+                            <div class="hero-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number" data-count="2">0</span> // à modifier 
+                                    <span class="stat-label">Années d'expérience</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" data-count="10">0</span> // à modifier 
+                                    <span class="stat-label">Projets réalisés</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" data-count="5">0</span> // à modifier 
+                                    <span class="stat-label">Technologies maîtrisées</span>
+                                </div>
+                            </div>
+                            
+                            <div class="hero-actions">
+                                <a href="#projets-section" class="btn btn-primary btn-cta">
+                                    Voir mes projets
+                                    <span class="btn-icon">🚀</span>
+                                </a>
+                                <a href="#contact-section" class="btn btn-outline-secondary btn-cta">
+                                    Me contacter
+                                    <span class="btn-icon">💬</span>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="hero-visual">
+                            <div class="visual-container">
+                                <div class="floating-elements">
+                                    <div class="tech-badge" data-tech="JavaScript">JS</div>
+                                    <div class="tech-badge" data-tech="React">⚛️</div>
+                                    <div class="tech-badge" data-tech="Node.js">🟢</div>
+                                    <div class="tech-badge" data-tech="HTML5">🔸</div>
+                                    <div class="tech-badge" data-tech="CSS3">🎨</div>
+                                    <div class="tech-badge" data-tech="MySQL">🗄️</div>
+                                </div>
+                                <div class="hero-image-placeholder">
+                                    <div class="code-snippet">
+                                        <div class="code-line">
+                                            <span class="code-keyword">const</span> 
+                                            <span class="code-variable">developer</span> = {
+                                        </div>
+                                        <div class="code-line code-indent">
+                                            name: <span class="code-string">'Charlène'</span>,
+                                        </div>
+                                        <div class="code-line code-indent">
+                                            skills: [<span class="code-string">'Frontend'</span>, <span class="code-string">'Backend'</span>],
+                                        </div>
+                                        <div class="code-line code-indent">
+                                            passionate: <span class="code-boolean">true</span>
+                                        </div>
+                                        <div class="code-line">};  </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Indicateur de scroll -->
+                <div class="scroll-indicator" aria-hidden="true">
+                    <span class="scroll-text">Découvrez mon parcours</span>
+                    <div class="scroll-arrow">⬇️</div>
+                </div>
+            </div>
+        </section>
 
-      <button id="showProfile" class="buttonProfile">
-        <span>Voir mon profil</span>
-      </button>
+        <!-- Section Profil -->
+        <aside class="profile-section" id="profil-section" role="complementary">
+            <div class="container">
+                <header class="section-header text-center" data-aos="fade-up">
+                    <span class="section-badge">À propos</span>
+                    <h2 class="section-title">Mon Profil</h2>
+                    <p class="section-description">
+                        Découvrez mon parcours, mes compétences et ce qui me passionne 
+                        dans le développement web.
+                    </p>
+                </header>
+                
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="profile-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="profile-intro">
+                                <p class="lead">
+                                    Bonjour ! Je suis <strong>Charlène</strong>, 36 ans, actuellement en reconversion 
+                                    pour travailler dans le milieu du développement web. Suite à une formation de 
+                                    marketing digital, j'ai acquis des connaissances en UX design, création de sites 
+                                    WordPress et référencement naturel.
+                                </p>
+                                <p>
+                                    Je suis une développeuse web full stack passionnée par le <strong>backend</strong>, 
+                                    l'<strong>IA</strong>, le <strong>design</strong> et grande fan de sciences fiction. 
+                                    Mon objectif est de créer des applications web performantes et intuitives.
+                                </p>
+                            </div>
 
-      <!-- La section profil -->
-      <div id="profilSection" style="margin-top: 20px">
-        <!-- Le JS va injecter la fiche ici -->
-      </div>
-    </aside>
+                            <button class="btn btn-outline-primary profile-toggle" 
+                                    id="showProfile" 
+                                    type="button"
+                                    aria-expanded="false"
+                                    aria-controls="profile-details"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#profile-details">
+                                <span class="btn-text">Voir le profil détaillé</span>
+                                <span class="btn-icon">👤</span>
+                            </button>
 
-    <!-- Main -->
-    <main>
-      <section id="parcours">
-        <h2>Parcours</h2>
-        <p>
-          Voici une présentation de mes expériences depuis ma reconversion
-          professionnelle.
-        </p>
-        <button id="showExperiences" class="buttonExp">Mes expériences</button>
-        <div
-          id="experiencesSection"
-          style="display: none; margin-top: 20px"
-        ></div>
-        <!-- Le JS va injecter les expériences ici -->
-      </section>
+                            <!-- Détails du profil (collapsible) -->
+                            <div class="collapse profile-details" id="profile-details" aria-live="polite">
+                                <div class="profile-content">
+                                    
+                                    <!-- Compétences techniques -->
+                                    <div class="skills-section">
+                                        <h3 class="skills-title">
+                                            <span class="skills-icon">🛠️</span>
+                                            Compétences Techniques
+                                        </h3>
+                                        <div class="skills-grid">
+                                            <div class="skill-category">
+                                                <h4>Frontend</h4>
+                                                <div class="skill-tags">
+                                                    <span class="skill-tag">HTML5</span>
+                                                    <span class="skill-tag">CSS3</span>
+                                                    <span class="skill-tag">JavaScript</span>
+                                                    <span class="skill-tag">React</span>
+                                                    <span class="skill-tag">Bootstrap</span>
+                                                </div>
+                                            </div>
+                                            <div class="skill-category">
+                                                <h4>Backend</h4>
+                                                <div class="skill-tags">
+                                                    <span class="skill-tag">Node.js</span>
+                                                    <span class="skill-tag">Express</span>
+                                                    <span class="skill-tag">MySQL</span>
+                                                    <span class="skill-tag">NoSQL</span>
+                                                    <span class="skill-tag">API REST</span>
+                                                </div>
+                                            </div>
+                                            <div class="skill-category">
+                                                <h4>Autres</h4>
+                                                <div class="skill-tags">
+                                                    <span class="skill-tag">WordPress</span>
+                                                    <span class="skill-tag">UX Design</span>
+                                                    <span class="skill-tag">SEO</span>
+                                                    <span class="skill-tag">Git</span>
+                                                    <span class="skill-tag">Marketing Digital</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-      <section id="projets" class="container my-5">
-        <!--Classe Bootstrap my-5 = margin-top et margin-bottom: 3rem (48px)-->
-        <h2 class="text-center mb-4">Projets</h2>
-        <p class="text-center">
-          Voici quelques uns de mes projets en cours de développement utilisant
-          les technologies de HTML, CSS, JavaScript, Node.js, Express, React,
-          MySQL, NoSQL et autres outils modernes (bibliothèque externes,
-          frameworks, etc.).
-        </p>
+                                    <!-- Centres d'intérêt -->
+                                    <div class="interests-section">
+                                        <h3 class="interests-title">
+                                            <span class="interests-icon">🌟</span>
+                                            Centres d'intérêt
+                                        </h3>
+                                        <div class="interests-list">
+                                            <div class="interest-item">
+                                                <span class="interest-emoji">🤖</span>
+                                                <div class="interest-content">
+                                                    <h4>Intelligence Artificielle</h4>
+                                                    <p>Passionnée par les possibilités offertes par l'IA dans le développement web</p>
+                                                </div>
+                                            </div>
+                                            <div class="interest-item">
+                                                <span class="interest-emoji">🚀</span>
+                                                <div class="interest-content">
+                                                    <h4>Science Fiction</h4>
+                                                    <p>Grande fan de SF, source d'inspiration pour imaginer les technologies de demain</p>
+                                                </div>
+                                            </div>
+                                            <div class="interest-item">
+                                                <span class="interest-emoji">🎨</span>
+                                                <div class="interest-content">
+                                                    <h4>Design & UX</h4>
+                                                    <p>Créer des interfaces belles et fonctionnelles pour une meilleure expérience utilisateur</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
 
-        <div id="swiperProjectContainer" class="mt-4"></div>
-        <!--Classe Boostrap mt-4 = margin-top: 1.5rem (24px)-->
-      </section>
+        <!-- Contenu principal -->
+        <main id="main-content" role="main">
+            
+            <!-- Section Parcours -->
+            <section id="parcours-section" class="parcours-section">
+                <div class="container">
+                    <header class="section-header text-center" data-aos="fade-up">
+                        <span class="section-badge">Mon chemin</span>
+                        <h2 class="section-title">Parcours Professionnel</h2>
+                        <p class="section-description">
+                            Voici une présentation de mes expériences depuis ma reconversion 
+                            professionnelle vers le développement web.
+                        </p>
+                    </header>
+                    
+                    <div class="row">
+                        <div class="col-lg-10 mx-auto">
+                            <div class="d-flex flex-wrap gap-3 align-items-center justify-content-center mb-4">
+                                
+                                <a href="assets/cv/charlene-gausset-cv.pdf" 
+                                   class="btn btn-primary"
+                                   download="Charlène-Gausset-CV.pdf"
+                                   role="button"
+                                   aria-label="Télécharger mon CV au format PDF">
+                                    <span class="btn-text">Télécharger le CV</span>
+                                    <span class="btn-icon">📄</span>
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Vous pouvez me contacter via email, WhatsApp ou LinkedIn.</p>
-
-        <form
-          id="contactForm"
-          action="https://formsubmit.co/ajax/6a412ce97022e91ed1a11abe3c3631a5"
-          method="POST"
-          enctype="multipart/form-data"
-        >
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
-
-          <!-- <label for="file">Fichier:</label> Désactivé temporairement-->
-          <!-- <input type="file" id="file" name="file"> -->
-
-          <button type="submit">Envoyer</button>
-        </form>
-      </section>
-    </main>
-
-    <!-- Footer -->
-
-    <section class="footerSection">
-      <h2>Merci de votre visite !</h2>
-      <p>
-        J'espère que vous avez apprécié votre visite sur mon portfolio.
-        N'hésitez pas à me contacter pour toute question ou collaboration.
-      </p>
-      <p>À bientôt !</p>
-      <p class="footerText">Mew vole sur lui-même pour vous dire au revoir !</p>
-      <img
-        src="https://i.pinimg.com/originals/65/90/f6/6590f6e00ca8ae7957c2542099303153.gif"
-        alt="mew vole sur lui même"
-        class="imgFooter"
-      />
+            <!-- Section Projets -->
+            <section id="projets-section" class="projets-section">
+                <div class="container">
+                    <header class="section-header text-center" data-aos="fade-up">
+                        <span class="section-badge">Portfolio</span>
+                            <h2 class="section-title">Mes Projets</h2>
+                                <p class="section-description">
+                                Découvrez quelques-uns de mes projets réalisés avec les technologies modernes :
+                                HTML, CSS, JavaScript, Node.js, Express, React, MySQL, NoSQL et bien d'autres.
+                                </p>
+                    </header>
+        
+        <!-- Grille de projets -->
+        <div class="projects-grid" data-aos="fade-up" data-aos-delay="200">
+            <!-- Les projets seront injectés par JavaScript -->
+            <div class="project-card" data-category="frontend">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/400x250/667eea/ffffff?text=Projet+1" alt="Projet 1">
+                    <div class="project-overlay">
+                        <div class="project-actions">
+                            <a href="#" class="action-btn" aria-label="Voir le projet">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </a>
+                            <a href="#" class="action-btn" aria-label="Voir le code">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="16,18 22,12 16,6"></polyline>
+                                    <polyline points="8,6 2,12 8,18"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        </div>
     </section>
 
-    <footer class="footer">
-      <p>&copy; 2025 - Charlène - Tout droit réservé®</p>
-      <div class="social-links">
-        <a href="https://github.com/charlene631" target="_blank"
-          >💻 GitHub</a
-        >
-        <a
-          href="https://www.linkedin.com/in/charlène-gausset-113380b5/"
-          target="_blank"
-          >🔗 LinkedIn</a
-        >
-      </div>
-    </footer>
+            <!-- Section Contact -->
+            <section id="contact-section" class="contact-section">
+                <div class="container">
+                    <header class="section-header text-center" data-aos="fade-up">
+                        <span class="section-badge">Prenons contact</span>
+                        <h2 class="section-title">Contactez-moi</h2>
+                        <p class="section-description">
+                            Vous avez un projet en tête ? Une question ? N'hésitez pas à me contacter. 
+                            Je serai ravie d'échanger avec vous !
+                        </p>
+                    </header>
 
-    <!-- Bibliothèques externes -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            
+                            <!-- Informations de contact -->
+                            <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
+                                <div class="row text-center">
+                                    <div class="col-md-4">
+                                        <div class="contact-method">
+                                            <div class="contact-icon">📧</div>
+                                            <h3>Email</h3>
+                                            <p>Envoyez-moi un message</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="contact-method">
+                                            <div class="contact-icon">💬</div>
+                                            <h3>WhatsApp</h3>
+                                            <p>Discussion rapide</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="contact-method">
+                                            <div class="contact-icon">🔗</div>
+                                            <h3>LinkedIn</h3>
+                                            <p>Réseau professionnel</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-    <!-- Tes fichiers JavaScript -->
-    <script src="assets/js/swipe.js" type="module"></script>
+                            <!-- Formulaire de contact -->
+                            <div class="contact-form-container" data-aos="fade-up" data-aos-delay="200">
+                                <form id="contactForm" 
+                                      class="contact-form needs-validation"
+                                      action="https://formsubmit.co/ajax/6a412ce97022e91ed1a11abe3c3631a5"
+                                      method="POST"
+                                      enctype="multipart/form-data"
+                                      novalidate>
+                                    
+                                    <!-- Champs cachés pour FormSubmit -->
+                                    <input type="hidden" name="_captcha" value="false">
+                                    <input type="hidden" name="_next" value="https://votre-site.com/merci.html">
+                                    <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+                                    
+                                    <fieldset class="form-fieldset">
+                                        <legend class="visually-hidden">Formulaire de contact</legend>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" 
+                                                           class="form-control" 
+                                                           id="name" 
+                                                           name="name" 
+                                                           placeholder="Votre nom"
+                                                           required 
+                                                           aria-describedby="name-error"
+                                                           autocomplete="name">
+                                                    <label for="name">
+                                                        Nom complet <span class="required" aria-label="requis">*</span>
+                                                    </label>
+                                                    <div id="name-error" class="invalid-feedback" role="alert"></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3">
+                                                    <input type="email" 
+                                                           class="form-control" 
+                                                           id="email" 
+                                                           name="email" 
+                                                           placeholder="votre@email.com"
+                                                           required 
+                                                           aria-describedby="email-error"
+                                                           autocomplete="email">
+                                                    <label for="email">
+                                                        Adresse email <span class="required" aria-label="requis">*</span>
+                                                    </label>
+                                                    <div id="email-error" class="invalid-feedback" role="alert"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-floating mb-3">
+                                            <input type="text" 
+                                                   class="form-control" 
+                                                   id="subject" 
+                                                   name="subject" 
+                                                   placeholder="Sujet de votre message"
+                                                   aria-describedby="subject-help">
+                                            <label for="subject">Sujet (optionnel)</label>
+                                            <div id="subject-help" class="form-text">
+                                                Aidez-moi à mieux comprendre votre demande
+                                            </div>
+                                        </div>
+
+                                        <div class="form-floating mb-4">
+                                            <textarea class="form-control message-textarea" 
+                                                      id="message" 
+                                                      name="message"
+                                                      placeholder="Votre message"
+                                                      required 
+                                                      aria-describedby="message-error"
+                                                      rows="6"
+                                                      style="min-height: 120px;"></textarea>
+                                            <label for="message">
+                                                Votre message <span class="required" aria-label="requis">*</span>
+                                            </label>
+                                            <div id="message-error" class="invalid-feedback" role="alert"></div>
+                                        </div>
+
+                                        <!-- Section fichier (désactivée temporairement) -->
+                                        <!-- 
+                                        <div class="mb-4">
+                                            <label for="file" class="form-label">
+                                                Joindre un fichier (optionnel)
+                                            </label>
+                                            <input type="file" 
+                                                   class="form-control" 
+                                                   id="file" 
+                                                   name="file" 
+                                                   accept=".pdf,.doc,.docx,.txt"
+                                                   aria-describedby="file-help">
+                                            <div id="file-help" class="form-text">
+                                                Formats acceptés : PDF, DOC, DOCX, TXT (max 5MB)
+                                            </div>
+                                        </div>
+                                        -->
+
+                                        <!-- Checkbox RGPD -->
+                                        <div class="form-check mb-4">
+                                            <input class="form-check-input" 
+                                                   type="checkbox" 
+                                                   id="privacy" 
+                                                   name="privacy" 
+                                                   required
+                                                   aria-describedby="privacy-error">
+                                            <label class="form-check-label" for="privacy">
+                                                J'accepte que mes données personnelles soient utilisées pour me recontacter 
+                                                <span class="required" aria-label="requis">*</span>
+                                            </label>
+                                            <div id="privacy-error" class="invalid-feedback" role="alert"></div>
+                                        </div>
+
+                                        <!-- Bouton d'envoi -->
+                                        <div class="form-submit">
+                                            <button type="submit" 
+                                                    class="btn btn-primary btn-lg submit-btn"
+                                                    id="submitBtn">
+                                                <span class="btn-text">Envoyer le message</span>
+                                                <span class="btn-icon">📤</span>
+                                                <div class="btn-loader" aria-hidden="true">
+                                                    <div class="spinner-border spinner-border-sm" role="status">
+                                                        <span class="visually-hidden">Envoi en cours...</span>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </div>
+
+                                        <!-- Message de statut -->
+                                        <div id="form-status" 
+                                             class="form-status" 
+                                             role="alert" 
+                                             aria-live="polite" 
+                                             aria-atomic="true">
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Section de remerciement -->
+        <section class="thanks-section" role="contentinfo">
+            <div class="container text-center">
+                <div class="thanks-content" data-aos="fade-up">
+                    
+                    <h2 class="thanks-title">Merci de votre visite !</h2>
+                    <p class="thanks-message">
+                        J'espère que vous avez apprécié la découverte de mon portfolio.
+                        N'hésitez pas à me contacter pour toute question, collaboration 
+                        ou simplement pour échanger sur nos passions communes.
+                    </p>
+                    <p class="thanks-signature">À bientôt ! 🚀</p>
+                    
+                    <!-- Bouton retour en haut -->
+                    <button class="back-to-top" 
+                            id="backToTop" 
+                            type="button"
+                            aria-label="Retour en haut de page"
+                            title="Retour en haut">
+                        ↑
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pied de page principal -->
+        <footer class="main-footer" role="contentinfo">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="row">
+                        
+                        <!-- Informations principales -->
+                        <div class="col-lg-4 mb-4">
+                            <div class="footer-section">
+                                <h3 class="footer-title">Charlène Gausset</h3>
+                                <p class="footer-description">
+                                    Développeuse Web Full Stack passionnée par le backend, 
+                                    l'IA et le design. Toujours prête pour de nouveaux défis !
+                                </p>
+                                <div class="footer-contact">
+                                    <p>📍 Bayonne, France</p>
+                                    <p>🎂 36 ans</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation rapide -->
+                        <div class="col-lg-2 col-md-6 mb-4">
+                            <div class="footer-section">
+                                <h4 class="footer-subtitle">Navigation</h4>
+                                <ul class="footer-links">
+                                    <li><a href="#hero-section">Accueil</a></li>
+                                    <li><a href="#profil-section">Profil</a></li>
+                                    <li><a href="#parcours-section">Parcours</a></li>
+                                    <li><a href="#projets-section">Projets</a></li>
+                                    <li><a href="#contact-section">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Technologies -->
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="footer-section">
+                                <h4 class="footer-subtitle">Technologies</h4>
+                                <div class="tech-list">
+                                    <span class="tech-item">JavaScript</span>
+                                    <span class="tech-item">React</span>
+                                    <span class="tech-item">Node.js</span>
+                                    <span class="tech-item">Express</span>
+                                    <span class="tech-item">MySQL</span>
+                                    <span class="tech-item">HTML/CSS</span>
+                                    <span class="tech-item">WordPress</span>
+                                    <span class="tech-item">UX Design</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Réseaux sociaux -->
+                        <div class="col-lg-3 mb-4">
+                            <div class="footer-section">
+                                <h4 class="footer-subtitle">Suivez-moi</h4>
+                                <div class="social-links">
+                                    <a href="https://github.com/charlene631" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="social-link"
+                                       aria-label="Voir mon profil GitHub (nouvelle fenêtre)">
+                                        <span class="social-icon">💻</span>
+                                        <span class="social-text">GitHub</span>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/charlène-gausset-113380b5/" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer"
+                                       class="social-link"
+                                       aria-label="Voir mon profil LinkedIn (nouvelle fenêtre)">
+                                        <span class="social-icon">🔗</span>
+                                        <span class="social-text">LinkedIn</span>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ligne de séparation -->
+                    <hr class="footer-divider">
+
+                    <!-- Copyright et mentions légales -->
+                    <div class="footer-bottom">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <p class="copyright">
+                                    &copy; 2025 Charlène Gausset - Tous droits réservés
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="legal-links">
+                                    <a href="#" class="legal-link">Mentions légales</a>
+                                    <a href="#" class="legal-link">Politique de confidentialité</a>
+                                    <a href="#" class="legal-link">Cookies</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Informations techniques -->
+                        <div class="footer-meta">
+                            <p class="meta-info">
+                                Site développé en HTML5, CSS3, JavaScript et Bootstrap 5
+                                • Version <span id="version">2.0</span> 
+                                • Dernière mise à jour : <time datetime="2025-01-15">02 septembre 2025</time>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Overlay pour le menu mobile -->
+        <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+
+        <!-- Boutons d'action flottants -->
+        <div class="floating-actions" aria-label="Actions rapides">
+            <button class="floating-btn theme-toggle-fab" 
+                    id="themeToggleFab" 
+                    type="button"
+                    aria-label="Changer le thème"
+                    title="Changer le thème">
+                <span class="fab-icon light">☀️</span>
+                <span class="fab-icon dark">🌙</span>
+            </button>
+            
+            <a href="#contact-section" 
+               class="floating-btn contact-fab"
+               aria-label="Aller à la section contact"
+               title="Me contacter">
+                <span class="fab-icon">💬</span>
+            </a>
+        </div>
+
+        <!-- Toast notifications -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer">
+            <!-- Les toasts seront injectés ici par JavaScript -->
+        </div>
+
+        <!-- Loading screen -->
+        <div class="loading-screen" id="loadingScreen" aria-hidden="true">
+            <div class="loading-content">
+                <div class="loading-logo">
+                    <img src="https://media.tenor.com/8PlnT9rtCScAAAAj/mew-pokemon.gif" 
+                         alt="Chargement..." 
+                         class="loading-gif">
+                </div>
+                <h2 class="loading-title">Chargement du portfolio...</h2>
+                <div class="loading-progress">
+                    <div class="progress">
+                        <div class="progress-bar" 
+                             role="progressbar" 
+                             aria-valuenow="0" 
+                             aria-valuemin="0" 
+                             aria-valuemax="100">
+                        </div>
+                    </div>
+                    <p class="loading-text">Initialisation des composants</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+            crossorigin="anonymous"></script>
+    
+    <!-- Scripts personnalisés -->
+    <script src="assets/js/theme.js" type="module"></script>
+    <script src="assets/js/navigation.js" type="module"></script>
+    <script src="assets/js/form-validation.js" type="module"></script>
+    <script src="assets/js/animations.js" type="module"></script>
+    <script src="assets/js/utils.js" type="module"></script>
+    <script src="assets/js/main.js" type="module"></script>
     <script src="assets/js/script.js" type="module"></script>
-    <script src="assets/js/burger.js" type="module"></script>
-    <script src="assets/js/form.js" type="module"></script>
-  </body>
+
+</body>
 </html>

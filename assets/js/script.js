@@ -1,204 +1,99 @@
-// Gestion du thème dark mode avec localstorage et écouteur d'évènement au bouton
-function saveTheme(theme) {
-  document.body.className = theme;
-  localStorage.setItem("theme", theme);
+// Récupérer le bouton
+const backToTopButton = document.getElementById('backToTop');
+
+// Fonction pour faire défiler vers le haut
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
-function toggleTheme() {
-  const current = document.body.className;
-  const next = current === "dark" ? "light" : "dark";
-  saveTheme(next);
-}
+// Ajouter l'événement click au bouton
+backToTopButton.addEventListener('click', scrollToTop);
 
-window.onload = () => {
-  const savedTheme = localStorage.getItem("theme") || "light";
-  saveTheme(savedTheme);
-
-  document.getElementById("darkToggle")?.addEventListener("click", toggleTheme);
-};
-
-// Importation du module burger.js
-import { createBurgerMenu } from "./burger.js";
-createBurgerMenu();
-
-// Liens navigation avec scroll
-document.getElementById("profilLink")?.addEventListener("click", (e) => {
-  e.preventDefault();
-  document
-    .getElementById("profilSection")
-    ?.scrollIntoView({ behavior: "smooth" });
-});
-document.getElementById("parcoursLink")?.addEventListener("click", (e) => {
-  e.preventDefault();
-  document.getElementById("parcours")?.scrollIntoView({ behavior: "smooth" });
-});
-document.getElementById("projetsLink")?.addEventListener("click", (e) => {
-  e.preventDefault();
-  document.getElementById("projets")?.scrollIntoView({ behavior: "smooth" });
-});
-document.getElementById("contactLink")?.addEventListener("click", (e) => {
-  e.preventDefault();
-  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-});
-
-// Toggle profil
-//const openSound = new Audio("assets/sound/Pokemon out.mp3");
-//const closeSound = new Audio("assets/sound/Pokemon return.mp3");
-
-const buttonProfile = document.getElementById("showProfile");
-const sectionProfile = document.getElementById("profilSection");
-let isProfileVisible = false;
-
-buttonProfile?.addEventListener("click", () => {
-  if (!isProfileVisible) {
-    sectionProfile.style.display = "block";
-    buttonProfile.innerHTML = "Masquer mon profil";
-    buttonProfile.classList.add("active");
-    isProfileVisible = true;
-
-    //openSound.play(); // Son à l'ouverture
-
-    fetch("data.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
+// Attendre que le DOM soit chargé
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('themeToggle');
+    const themeToggleFab = document.getElementById('themeToggleFab');
+    const lightIcon = document.querySelector('.theme-icon-light');
+    const darkIcon = document.querySelector('.theme-icon-dark');
+    const fabLightIcon = document.querySelector('.fab-icon.light');
+    const fabDarkIcon = document.querySelector('.fab-icon.dark');
+    
+    // Vérifier qu'au moins un bouton existe
+    if (themeToggle || themeToggleFab) {
+        
+        // Récupérer le thème sauvegardé ou définir par défaut
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        
+        // Appliquer le thème initial
+        setTheme(savedTheme);
+        
+        // Ajouter l'événement click aux boutons disponibles
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
         }
-        return response.json();
-      })
-      .then((data) => {
-        const e = data;
-        const pv = Math.floor(Math.random() * 100) + 50;
-
-        sectionProfile.innerHTML = `
-          <div class="card-container" >
-            <div class="card-flip" id="flipCard">
-              <div class="card-face front custom-card" >                                              
-                <p><strong>PV :</strong> ${pv}</p>
-                <span class="badge bg-primary">Type : Front-End</span>
-                <h4>Compétences</h4><br>
-                <div class="d-flex flex-wrap justify-content-center gap-2">
-                  ${e.competences
-                    .map(
-                      (skill) =>
-                        `<span class="badge bg-success">${skill}</span>`
-                    )
-                    .join("")}
-                </div>
+        
+        if (themeToggleFab) {
+            themeToggleFab.addEventListener('click', toggleTheme);
+        }
+        
+        // Fonction pour basculer le thème
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        }
+        
+        // Fonction pour définir le thème
+        function setTheme(theme) {
+            // Appliquer l'attribut data-theme sur l'élément html
+            document.documentElement.setAttribute('data-theme', theme);
+            
+            // Sauvegarder dans localStorage
+            localStorage.setItem('theme', theme);
+            
+            // Mettre à jour le bouton principal si il existe
+            if (themeToggle) {
+                themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
                 
-              </div>
-              <div class="card-face back custom-card">
-                <h3>${e.nom}</h3>
-                <p><strong>Âge :</strong> ${e.âge} ans</p>
-                <p><strong>Adresse :</strong> ${e.adresse.ville}, ${
-          e.adresse.rue
-        }</p>
-                <h4>Intérêts</h4>
-                <div class="d-flex flex-wrap justify-content-center gap-2">
-                  ${e.interets
-                    .map(
-                      (interet) =>
-                        `<span class="badge bg-warning text-dark">${interet}</span>`
-                    )
-                    .join("")}
-                </div>
-                <h4 class="mt-3">Évolution</h4>
-                <p class="italic-text">"Curieuse et passionnée, j'aime relever les défis. Mon parcours m'a permis de développer une vraie capacité d'adaptation et une grande persévérance."</p>                
-                <img src="assets/image/mewblue.webp" class="evolution-img" alt="Mew">
-                <p>Prochaine évolution : Mew</p>
-                <button class="return-btn closeCardBtn" type="button" aria-label="Fermer la carte de profil">Retour</button>
-              </div>
-            </div>
-          </div>
-        `;
-
-        const flipCard = document.getElementById("flipCard");
-        flipCard?.addEventListener("click", (e) => {
-          if (!e.target.classList.contains("return-btn")) {
-            flipCard.classList.toggle("flipped");
-          }
-        });
-
-        sectionProfile.addEventListener("click", (e) => {
-          if (e.target.classList.contains("return-btn")) {
-            const cardContainer = document.querySelector(".card-container");
-            cardContainer.classList.add("ranged");
-
-            // closeSound.play(); // Son à la fermeture
-
-            setTimeout(() => {
-              sectionProfile.innerHTML = "";
-              sectionProfile.style.display = "none";
-              isProfileVisible = false;
-              buttonProfile.textContent = "Voir mon profil";
-            }, 500);
-          }
-        });
-      })
-      .catch((error) => {
-        console.error("Erreur de chargement du fichier JSON:", error);
-        sectionProfile.innerHTML =
-          "<p>Impossible de charger le profil pour le moment.</p>";
-      });
-  } else {
-    // closeSound.play(); // Son à la fermeture
-    sectionProfile.innerHTML = "";
-    sectionProfile.style.display = "none";
-    isProfileVisible = false;
-    buttonProfile.innerHTML = "Voir mon profil";
-    buttonProfile.classList.remove("active");
-  }
-});
-
-// Toggle expériences
-const expButton = document.getElementById("showExperiences");
-const expSection = document.getElementById("experiencesSection");
-let expVisible = false;
-
-expButton?.addEventListener("click", () => {
-  expVisible = !expVisible;
-  expSection.style.display = expVisible ? "block" : "none";
-  expButton.textContent = expVisible
-    ? "Masquer mes expériences"
-    : "Mes expériences";
-
-  if (expVisible) {
-    fetch("data.json")
-      .then((response) => response.json())
-      .then((e) => {
-        expSection.innerHTML = `
-          <h3>Parcours professionnel</h3>
-          <table class="table table-striped table-hover">
-            <thead>
-              <tr>
-                <th>Poste</th>
-                <th>Entreprise</th>
-                <th>Période</th>
-                <th>Détails</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${e.parcours
-                .map(
-                  (exp) => `
-                <tr>
-                  <td>${exp.poste}</td>
-                  <td>${exp.entreprise || "Non renseigné"}</td>
-                  <td>${exp.periode || "Non renseigné"}</td>
-                  <td>${exp.details || "Non renseigné"}</td>
-                </tr>
-              `
-                )
-                .join("")}
-            </tbody>
-          </table>
-        `;
-      })
-      .catch((error) => {
-        console.error(
-          "Erreur de chargement du fichier JSON pour les expériences:",
-          error
-        );
-        expSection.innerHTML = "<p>Impossible de charger les expériences.</p>";
-      });
-  }
+                if (lightIcon && darkIcon) {
+                    if (theme === 'dark') {
+                        lightIcon.style.display = 'none';
+                        darkIcon.style.display = 'inline';
+                        themeToggle.setAttribute('title', 'Passer au thème clair');
+                        themeToggle.setAttribute('aria-label', 'Passer au thème clair');
+                    } else {
+                        lightIcon.style.display = 'inline';
+                        darkIcon.style.display = 'none';
+                        themeToggle.setAttribute('title', 'Passer au thème sombre');
+                        themeToggle.setAttribute('aria-label', 'Passer au thème sombre');
+                    }
+                }
+            }
+            
+            // Mettre à jour le bouton FAB si il existe
+            if (themeToggleFab) {
+                themeToggleFab.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+                
+                if (fabLightIcon && fabDarkIcon) {
+                    if (theme === 'dark') {
+                        fabLightIcon.style.display = 'none';
+                        fabDarkIcon.style.display = 'inline';
+                        themeToggleFab.setAttribute('title', 'Passer au thème clair');
+                        themeToggleFab.setAttribute('aria-label', 'Passer au thème clair');
+                    } else {
+                        fabLightIcon.style.display = 'inline';
+                        fabDarkIcon.style.display = 'none';
+                        themeToggleFab.setAttribute('title', 'Passer au thème sombre');
+                        themeToggleFab.setAttribute('aria-label', 'Passer au thème sombre');
+                    }
+                }
+            }
+        }
+        
+    } else {
+        console.error('Aucun bouton de toggle de thème trouvé');
+    }
 });
