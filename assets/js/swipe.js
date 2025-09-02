@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     slideElement.innerHTML = `
     <a href="${slide.lien}" target="_blank" class="slide-link" style="text-decoration: none;">
       <div class="slide-content">
-        <img src="${slide.image}" alt="${slide.titre}" style="max-width: 100%; border-radius: 8px;">
+        <img src="${slide.image}" alt="${slide.titre}">
         <h3>${slide.titre}</h3>
         <p>${slide.description}</p>
       </div>
