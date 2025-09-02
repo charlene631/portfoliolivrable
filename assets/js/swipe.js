@@ -10,15 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const slidesData = [
     // variable de tableau d'objets des projets de développement web et web mobile pour la création du carousel
 
-    {
-      titre: " HACKATON régional août 2025- AccessiWeb - version 0",
-      description:
-        "AccessiWeb est une plateforme web permettant de consulter et gérer une bibliothèque de documents et de catégories, avec un système d'authentification sécurisé et gestion des rôles (`admin` et `user`). Elle permet aux utilisateurs de parcourir et rechercher des documents, aux administrateurs de gérer les utilisateurs, catégories et documents, le téléversement de fichiers (Cloudinary), la vérification d'email lors de l'inscription. Projet déployé en backend sur Render et frontend sur Vercel",
-      image: "assets/image/hackaton.png",
-      lien: "https://accessitheque-alf3.onrender.com",
-    },
-
-    {
+       {
       titre: "accessiWeb - Web app accessible de gestion de documents - Version 1",
       description: "accessiWeb est une web app accessible, en cours de développement, pour gérer des documents, avec un frontend React/Bootstrap déployé sur Vercel et un backend Node.js/Express sur Render utilisant une base MySQL et Cloudinary pour les fichiers. L'application propose l'affichage dynamique des documents et catégories, un filtrage interactif, une gestion des utilisateurs avec authentification, ainsi que des messages d'erreur et indicateurs de chargement pour une expérience utilisateur claire.",
       image: "assets/image/accessiweb.png",
@@ -31,14 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "assets/image/accueil.png",
       lien: "https://charlene631.github.io/site-de-rencontre/",
     },
-    {
-      titre:
-        "Portfolio - Version 0, qui est la première version de mon portfolio",
-      description:
-        "Un site statique incluant des animations et du dynamisme en HTML/CSS/Javascript et du JSON. Le projet utilise également des bibliothèques externes telles que Bootstrap et Swipe.",
-      image: "assets/image/portfolio.png",
-      lien: "https://charlene149611.github.io/portfoliov2/",
-    },
+  
   ];
 
   // Injection HTML Swiper pour créer un carousel
