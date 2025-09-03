@@ -6,14 +6,14 @@ const projects = [
       "Mon portfolio personnel avec animations Pokémon, Dark Mode et carte de profil interactive.",
     tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     link: "https://charlene631.github.io/portfolio/",
-    image: ""
+    image: "assets/image/TempsdAimerlogo.png"
   },
   {
     title: "Site de rencontre +50",
     description:
-      "Application web back-end avec Node.js et Express, gestion de base MySQL et MongoDB.",
+      "Site dynamique et interactif de début de formation. Projet en cours d'évolution.",
     tech: ["HTML5", "CSS3", "JavaScript"],
-    link: "#",
+    link: "https://charlene631.github.io/site-de-rencontre/",
     image: "assets/image/project-node.png"
   },
   {
