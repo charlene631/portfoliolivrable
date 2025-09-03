@@ -9,10 +9,10 @@ const projects = [
     image: ""
   },
   {
-    title: "Projet Node.js",
+    title: "Site de rencontre +50",
     description:
       "Application web back-end avec Node.js et Express, gestion de base MySQL et MongoDB.",
-    tech: ["Node.js", "Express", "MySQL", "MongoDB"],
+    tech: ["HTML5", "CSS3", "JavaScript"],
     link: "#",
     image: "assets/image/project-node.png"
   },
