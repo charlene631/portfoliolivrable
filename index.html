@@ -58,6 +58,20 @@
 </head>
 
 <body>
+
+    <div class="animated-bg">
+    <div class="bubble" style="--i:0.05;"></div>
+    <div class="bubble" style="--i:0.15;"></div>
+    <div class="bubble" style="--i:0.25;"></div>
+    <div class="bubble" style="--i:0.35;"></div>
+    <div class="bubble" style="--i:0.45;"></div>
+    <div class="bubble" style="--i:0.55;"></div>
+    <div class="bubble" style="--i:0.65;"></div>
+    <div class="bubble" style="--i:0.75;"></div>
+    <div class="bubble" style="--i:0.85;"></div>
+    <div class="bubble" style="--i:0.95;"></div>
+  </div>
+    
     <!-- Skip link pour l'accessibilité -->
     <a href="#main-content" class="visually-hidden-focusable btn btn-primary">
         Aller au contenu principal
@@ -428,7 +442,7 @@
                     </header>
         
         <!-- Grille de projets -->
-        <div class="projects-grid" data-aos="fade-up" data-aos-delay="200">
+        <div id="projects" class="projects-grid" data-aos="fade-up" data-aos-delay="200">
             <!-- Les projets seront injectés par JavaScript -->
             <div class="project-card" data-category="frontend">
                 <div class="project-image">
@@ -842,6 +856,7 @@
     <script src="assets/js/utils.js" type="module"></script>
     <script src="assets/js/main.js" type="module"></script>
     <script src="assets/js/script.js" type="module"></script>
+    <script src="assets/js/projects.js"></script>
 
 </body>
 </html>
