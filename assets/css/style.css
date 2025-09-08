@@ -435,7 +435,7 @@ h4 {
 .hero-greeting {
   display: block;
   font-size: 1.2rem;
-  color: var(--mewtwo-light-purple);
+  color: var(--mewtwo-silver);
   font-family: var(--font-sci-fi);
   margin-bottom: var(--space-xs);
   opacity: 0.9;
