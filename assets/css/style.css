@@ -3046,12 +3046,12 @@ section {
 /* ===== BUTTONS ===== */
 [data-theme="dark"] .btn-primary {
   background: var(--gradient-dark);
-  color: var(--mew-white);
+  color: var(--mew-light-pink);
   box-shadow: var(--sci-fi-shadow);
 }
 
 [data-theme="dark"] .btn-primary:hover {
-  color: var(--mew-white);
+  color: var(--mewtwo-light-purple);
   box-shadow: var(--sci-fi-shadow), var(--neon-glow);
 }
 
