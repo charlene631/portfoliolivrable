@@ -429,6 +429,7 @@ h4 {
 
 .hero-text {
   text-align: left;
+  margin-top: var(--space-lg);
 }
 
 .hero-greeting {
