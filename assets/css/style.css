@@ -435,7 +435,7 @@ h4 {
 .hero-greeting {
   display: block;
   font-size: 1.2rem;
-  color: var(--mewtwo-silver);
+  color: var(--mewtwo-purple);
   font-family: var(--font-sci-fi);
   margin-bottom: var(--space-xs);
   opacity: 0.9;
@@ -484,7 +484,7 @@ h4 {
 .stat-item {
   text-align: center;
   padding: var(--space-sm);
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--mew-light-pink);
   border-radius: var(--border-radius-md);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(245, 169, 208, 0.3);
@@ -509,7 +509,7 @@ h4 {
 .stat-label {
   display: block;
   font-size: 0.875rem;
-  color: var(--mewtwo-silver);
+  color: var(--mewtwo-dark-gray);
   margin-top: var(--space-xs);
 }
 
@@ -831,7 +831,7 @@ section {
 .section-description {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: var(--mewtwo-silver);
+  color: var(--mewtwo-dark-gray);
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
@@ -1723,7 +1723,7 @@ section {
 }
 
 .contact-method p {
-  color: var(--mewtwo-silver);
+  color: var(--mewtwo-dark-gray);
   margin: 0;
 }
 
@@ -1981,12 +1981,14 @@ section {
   margin-left: auto;
   margin-right: auto;
   opacity: 0.9;
+  color: var(--mewtwo-purple);
 }
 
 .thanks-signature {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: var(--space-lg);
+  color: var(--mewtwo-purple);
 }
 
 .back-to-top {
@@ -3093,11 +3095,17 @@ section {
   background: var(--gradient-card);
 }
 
-[data-theme="dark"] .hero-description,
+[data-theme="dark"] .hero-description {
+  color: var(--mewtwo-silver);
+}
 [data-theme="dark"] .hero-greeting,
 [data-theme="dark"] .hero-stats .stat-number,
 [data-theme="dark"] .hero-stats .stat-label {
-  color: var(--mewtwo-silver);
+  color: var(--mewtwo-light-purple);
+}
+[data-theme="dark"] .hero-stats .stat-item {
+  color: var(--mewtwo-light-purple);
+  
 }
 
 [data-theme="dark"] .hero-actions .btn-cta {
