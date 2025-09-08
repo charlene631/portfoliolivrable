@@ -3129,7 +3129,7 @@ section {
 [data-theme="dark"] .interests-section,
 [data-theme="dark"] .interest-item {
   background: var(--gradient-card);
-  color: var(--mewtwo-light-purple);
+  color: var(--mewtwo-silver);
   border: 1px solid rgba(187, 134, 252, 0.3);
   box-shadow: var(--sci-fi-shadow);
 }
