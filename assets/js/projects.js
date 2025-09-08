@@ -1,27 +1,24 @@
 const projects = [
   {
-    title: "Portfolio Pokédex",
+    title: "Écrire à la mer",
     description:
-      "Mon portfolio personnel avec animations Pokémon, Dark Mode et carte de profil interactive.",
-    tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    link: "https://charlene631.github.io/portfolio/",
-    image: "https://via.placeholder.com/400x250/667eea/ffffff?text=Portfolio+Pokédex"
+      "Application Web Node.js React MongoDB MySQL permettant aux utilisateurs d'écrire, conserver et partager des pensées sous forme de lettres ou messages. Projet en cours de développement.",
+    tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Mongoose", "Node.js", "Express", "React", "MySQL"],
+    link: "en cours de développement"
   },
   {
     title: "Site de rencontre +50",
     description:
       "Site dynamique et interactif de début de formation. Projet en cours d'évolution.",
     tech: ["HTML5", "CSS3", "JavaScript"],
-    link: "https://charlene631.github.io/site-de-rencontre/",
-    image: "https://via.placeholder.com/400x250/667eea/ffffff?text=Site+de+rencontre+50"
+    link: "https://charlene631.github.io/site-de-rencontre/"
   },
   {
     title: "accessiWeb",
     description:
-      "App React moderne avec composants réutilisables et interactions dynamiques.",
+      "App Node.js React moderne avec composants réutilisables et interactions dynamiques en cours de développement.",
     tech: ["Node.js", "React", "CSS", "JavaScript", "framework", "MySql"],
-    link: "https://accessi-web-khaki.vercel.app/",
-    image: "https://via.placeholder.com/400x250/667eea/ffffff?text=accessiWeb"
+    link: "https://accessi-web-khaki.vercel.app/"
   }
 ];
 
