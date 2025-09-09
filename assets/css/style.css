@@ -388,6 +388,52 @@ h4 {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* Affiche le burger sur mobile */
+@media (max-width: 992px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  /* Menu mobile */
+  .nav-menu {
+    position: fixed;
+    top: 80px; /* correspond à la hauteur de ton header */
+    left: -100%;
+    width: 250px;
+    height: calc(100vh - 80px);
+    background: rgba(255, 255, 255, 0.95); /* semi-transparent */
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    transition: left 0.3s ease;
+    border-right: 1px solid rgba(245, 169, 208, 0.3);
+    z-index: 1000;
+  }
+
+  /* Menu ouvert */
+  .nav-menu.is-open {
+    left: 0;
+  }
+
+  /* Nav items */
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    background: rgba(245, 169, 208, 0.1);
+  }
+}
+
 /* ========================================
    HERO SECTION
 ======================================== */
@@ -3670,4 +3716,5 @@ section {
   box-shadow: 0 0 10px rgba(255, 121, 176, 0.5),
     0 0 20px rgba(187, 134, 252, 0.5);
 }
+
 
