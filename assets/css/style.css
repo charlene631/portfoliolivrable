@@ -2090,15 +2090,10 @@ section {
   font-family: var(--font-sci-fi);
 }
 
-.social-links {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-lg);
-}
 
 .social-link {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: var(--space-sm);
   color: var(--mew-white);
@@ -2107,6 +2102,7 @@ section {
   border-radius: var(--border-radius-sm);
   transition: var(--transition-fast);
   border: 1px solid rgba(245, 169, 208, 0.3);
+  margin-bottom: var(--space-lg);
 }
 
 .social-link:hover {
@@ -2745,9 +2741,6 @@ section {
 /* Small mobile */
 @media (max-width: 480px) {
 
-  .main-header{
-    
-  }
 
   .nav-menu {
     width: 100vw;
@@ -3677,3 +3670,4 @@ section {
   box-shadow: 0 0 10px rgba(255, 121, 176, 0.5),
     0 0 20px rgba(187, 134, 252, 0.5);
 }
+
