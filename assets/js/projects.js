@@ -30,7 +30,7 @@ function displayProjects() {
     .map(proj => `
       <div class="project-card" data-category="frontend">
         <div class="project-image">
-          <img src="${proj.image}" alt="${proj.title}">
+          ${proj.title}
           <div class="project-overlay">
             <div class="project-actions">
               <a href="${proj.link}" class="action-btn" target="_blank" aria-label="Voir le projet">
