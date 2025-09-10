@@ -2,9 +2,9 @@ const projects = [
   {
     title: "Écrire à la mer",
     description:
-      "Application Web Node.js React MongoDB MySQL permettant aux utilisateurs d'écrire, conserver et partager des pensées sous forme de lettres ou messages. Projet en cours de développement.",
+      "Application Web Node.js React MongoDB MySQL permettant aux utilisateurs d'écrire, conserver et partager des pensées sous forme de lettres ou messages. Projet en cours de développement. Réponse d'une phrase test sur le navigateur",
     tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Mongoose", "Node.js", "Express", "React", "MySQL"],
-    link: "en cours de développement"
+    link: "http://localhost:5000"
   },
   {
     title: "Site de rencontre +50",
@@ -16,7 +16,7 @@ const projects = [
   {
     title: "accessiWeb",
     description:
-      "App Node.js React moderne avec composants réutilisables et interactions dynamiques en cours de développement.",
+      "App Node.js React moderne avec composants réutilisables et interactions dynamiques en cours de développement. Réponse JSON d'une API REST sur le navigateur.",
     tech: ["Node.js", "React", "CSS", "JavaScript", "MySql"],
     link: "https://accessiweb-1.onrender.com"
   }
