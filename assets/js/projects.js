@@ -17,8 +17,8 @@ const projects = [
     title: "accessiWeb",
     description:
       "App Node.js React moderne avec composants réutilisables et interactions dynamiques en cours de développement.",
-    tech: ["Node.js", "React", "CSS", "JavaScript", "framework", "MySql"],
-    link: "https://accessi-web-khaki.vercel.app/"
+    tech: ["Node.js", "React", "CSS", "JavaScript", "MySql"],
+    link: "https://accessiweb-1.onrender.com"
   }
 ];
 
