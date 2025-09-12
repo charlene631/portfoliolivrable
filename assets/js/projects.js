@@ -1,13 +1,20 @@
 const projects = [
+
+  {
+    title: "Attraper Pokémon",
+    description: "Jeu interactif en JavaScript où les utilisateurs peuvent rechercher des Pokémon et les attraper. Utilisation de l'API PokéAPI pour récupérer les données des Pokémon.",
+    tech: ["HTML", "CSS", "JavaScript", "API REST"],
+    link: "https://charlene631.github.io/attraper-pokemon/"
+  },
   {
     title: "Écrire à la mer",
     description:
-      "Application Web Node.js React MongoDB MySQL permettant aux utilisateurs d'écrire, conserver et partager des pensées sous forme de lettres ou messages. Projet en cours de développement. Réponse d'une phrase test sur le navigateur",
+      "Application Web Node.js React MongoDB MySQL permettant aux utilisateurs d'écrire, conserver et partager des pensées sous forme de lettres ou messages. Projet en cours de développement.",
     tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Mongoose", "Node.js", "Express", "React", "MySQL"],
-    link: "http://localhost:5000"
+    link: "https://ecrirealamer.onrender.com"
   },
   {
-    title: "Site de rencontre +50",
+    title: "Site de rencontre +50 ans",
     description:
       "Site dynamique et interactif de début de formation. Projet en cours d'évolution.",
     tech: ["HTML5", "CSS3", "JavaScript"],
