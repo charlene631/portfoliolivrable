@@ -2,28 +2,28 @@ const projects = [
 
   {
     title: "Attraper Pokémon",
-    description: "Jeu interactif en JavaScript où les utilisateurs peuvent rechercher des Pokémon et les attraper. Utilisation de l'API PokéAPI pour récupérer les données des Pokémon.",
+    description: "Jeu interactif en JavaScript où les utilisateurs peuvent rechercher des Pokémon et les attraper. Utilisation de l'API PokéAPI pour récupérer les données des Pokémon et gestion de l'état du jeu avec le stockage local.",
     tech: ["HTML", "CSS", "JavaScript", "API REST"],
     link: "https://charlene631.github.io/attraper-pokemon/"
   },
   {
     title: "Écrire à la mer",
     description:
-      "Application Web Node.js React MongoDB MySQL permettant aux utilisateurs d'écrire, conserver et partager des pensées sous forme de lettres ou messages. Projet en cours de développement.",
-    tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Mongoose", "Node.js", "Express", "React", "MySQL"],
-    link: "https://ecrirealamer.onrender.com"
+      "Application Web Node.js React MongoDB permettant aux utilisateurs d'écrire, conserver et partager des pensées sous forme de lettres ou de messages. Projet de fin de formation intégrant un backend robuste avec une interface utilisateur réactive.",
+    tech: ["HTML", "CSS", "JavaScript", "Mongoose", "Node.js", "Express", "React"],
+    link: "https://ecrirealamer-front.onrender.com"
   },
   {
     title: "Site de rencontre +50 ans",
     description:
-      "Site dynamique et interactif de début de formation. Projet en cours d'évolution.",
+      "Site dynamique et interactif de début de formation. Projet de début de formation que je prévois d'avancer. Utilisation de HTML, CSS et JavaScript pour créer une interface utilisateur attrayante et réactive.",
     tech: ["HTML5", "CSS3", "JavaScript"],
     link: "https://charlene631.github.io/site-de-rencontre/"
   },
   {
     title: "accessiWeb",
     description:
-      "App Node.js React moderne avec composants réutilisables et interactions dynamiques en cours de développement. Réponse JSON d'une API REST sur le navigateur.",
+      "App Node.js React moderne avec composants réutilisables et interactions dynamiques en cours de développement. Réponse d'un message sur le navigateur confirmant le déploiement du backend.",
     tech: ["Node.js", "React", "CSS", "JavaScript", "MySql"],
     link: "https://accessiweb-1.onrender.com"
   }
