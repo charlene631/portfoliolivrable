@@ -26,6 +26,20 @@ const projects = [
       "App Node.js React moderne avec composants réutilisables et interactions dynamiques en cours de développement. Réponse d'un message sur le navigateur confirmant le déploiement du backend.",
     tech: ["Node.js", "React", "CSS", "JavaScript", "MySql"],
     link: "https://accessiweb-1.onrender.com"
+  },
+  {
+    title: "Carnet de voyages",
+    description:
+    "Site web interatif offert à mes parents pour Noël, leur permettant de partager des souvenirs de voyages avec des photos et des descriptions. Utilisation de HTML, CSS et JavaScript pour créer une interface conviviale.",
+    tech: ["HTML", "CSS", "JavaScript", "Leaflet.js"],
+    link: "https://charlene631.github.io/carnet-de-voyages/"
+  }, 
+  {
+    title: "Carnet de départ",
+    description:
+    "Site web interactif offert à mon frère pour Noël, lui permettant de documenter ses expériences avant de partir à l'étranger. Utilisation de HTML, CSS et JavaScript pour créer une interface conviviale.",
+    tech: ["HTML", "CSS", "JavaScript", "Leaflet.js"],
+    link: "https://charlene631.github.io/carnet-de-depart/"
   }
 ];
 
