@@ -1,14 +1,20 @@
 {  
     "id": 1,
     "nom": "Charlène Gausset",
-    "âge": 36,
+    "âge": 37,
     "adresse": {
       "rue": "***",
       "ville": "Saint-Martin-de-Seignanx"
     },
     "interets": ["Salsa", "Marche", "Musique", "Lecture", "Sciences Fictions", "Calligraphie"],
-    "competences": ["WordPress", "UX Design", "HTML", "CSS", "JavaScript","Node.js", "React", "Express","MySql", "MongoDb"],
+    "competences": ["WordPress", "UX Design", "HTML5", "CSS3", "JavaScript","Node.js", "React", "Express","MySql", "MongoDb"],
     "parcours": [
+      {
+        "poste":"Formation professionnelle Développeur Web et Web Mobile",
+        "entreprise":"Afec, Bayonne",
+        "periode":"mars 2025 - décembre 2025",
+        "details":"Acquisition de compétences en développement web front-end et back-end, incluant HTML, CSS, JavaScript, Node.js, React, Express, MySQL et MongoDB. Réalisation de projets pratiques pour consolider les connaissances acquises. Stage avec l'entreprise TekConnect,pour une expérience professionnelle concrète dans le domaine du développement web et de l'identité numérique"
+      },
       {
         "poste":"Chargée de communication numérique et marketing",
         "entreprise":"Hi-commerce, Bordeaux",
